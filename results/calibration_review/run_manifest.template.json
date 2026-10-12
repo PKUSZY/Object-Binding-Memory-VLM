@@ -1,0 +1,12 @@
+{
+  "dataset": "binding_memory_integrated/core/calibration",
+  "items": 432,
+  "unique_attribute_combinations": 216,
+  "variants_per_combination": 2,
+  "model": "TO_BE_SELECTED",
+  "model_version": "TO_BE_RECORDED",
+  "prompt": "请识别这张图片的颜色、形状和纹理。",
+  "sampling": "all 432 items, one fresh request per image",
+  "input_policy": "send only instruction and image; do not send calibration_id, file path, answer key, or contact sheets",
+  "status": "prepared; model predictions not yet run"
+}

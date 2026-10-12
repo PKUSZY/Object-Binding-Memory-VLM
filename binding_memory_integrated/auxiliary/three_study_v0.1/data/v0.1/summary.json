@@ -1,0 +1,310 @@
+{
+  "version": "0.1.0-preview",
+  "seed": 20261007,
+  "splits": {
+    "dev": {
+      "episodes": 50,
+      "trials": 250,
+      "images": 400,
+      "type_counts": {
+        "target": 50,
+        "critical_2plus1": 50,
+        "critical_1plus1plus1": 50,
+        "near_2seen": 50,
+        "unrelated": 50
+      },
+      "query_attribute_counts": {
+        "target": {
+          "color": {
+            "red": 13,
+            "blue": 6,
+            "green": 6,
+            "yellow": 12,
+            "purple": 7,
+            "orange": 6
+          },
+          "shape": {
+            "circle": 6,
+            "square": 11,
+            "triangle": 10,
+            "star": 9,
+            "cross": 8,
+            "semicircle": 6
+          },
+          "texture": {
+            "solid": 9,
+            "horizontal_stripes": 13,
+            "vertical_stripes": 6,
+            "diagonal_stripes": 9,
+            "dots": 5,
+            "checkerboard": 8
+          }
+        },
+        "critical_2plus1": {
+          "color": {
+            "red": 10,
+            "blue": 9,
+            "green": 7,
+            "yellow": 9,
+            "purple": 6,
+            "orange": 9
+          },
+          "shape": {
+            "circle": 7,
+            "square": 14,
+            "triangle": 6,
+            "star": 7,
+            "cross": 11,
+            "semicircle": 5
+          },
+          "texture": {
+            "solid": 6,
+            "horizontal_stripes": 11,
+            "vertical_stripes": 7,
+            "diagonal_stripes": 7,
+            "dots": 7,
+            "checkerboard": 12
+          }
+        },
+        "critical_1plus1plus1": {
+          "color": {
+            "red": 8,
+            "blue": 5,
+            "green": 8,
+            "yellow": 10,
+            "purple": 10,
+            "orange": 9
+          },
+          "shape": {
+            "circle": 10,
+            "square": 6,
+            "triangle": 11,
+            "star": 9,
+            "cross": 8,
+            "semicircle": 6
+          },
+          "texture": {
+            "solid": 10,
+            "horizontal_stripes": 9,
+            "vertical_stripes": 11,
+            "diagonal_stripes": 10,
+            "dots": 4,
+            "checkerboard": 6
+          }
+        },
+        "near_2seen": {
+          "color": {
+            "red": 9,
+            "blue": 7,
+            "green": 11,
+            "yellow": 7,
+            "purple": 9,
+            "orange": 7
+          },
+          "shape": {
+            "circle": 8,
+            "square": 9,
+            "triangle": 8,
+            "star": 8,
+            "cross": 7,
+            "semicircle": 10
+          },
+          "texture": {
+            "solid": 8,
+            "horizontal_stripes": 7,
+            "vertical_stripes": 11,
+            "diagonal_stripes": 8,
+            "dots": 8,
+            "checkerboard": 8
+          }
+        },
+        "unrelated": {
+          "color": {
+            "red": 9,
+            "blue": 8,
+            "green": 8,
+            "yellow": 9,
+            "purple": 8,
+            "orange": 8
+          },
+          "shape": {
+            "circle": 8,
+            "square": 8,
+            "triangle": 9,
+            "star": 8,
+            "cross": 8,
+            "semicircle": 9
+          },
+          "texture": {
+            "solid": 9,
+            "horizontal_stripes": 8,
+            "vertical_stripes": 8,
+            "diagonal_stripes": 8,
+            "dots": 8,
+            "checkerboard": 9
+          }
+        }
+      },
+      "structural_difficulty_counts": {
+        "control": 50,
+        "hard": 100,
+        "medium": 50,
+        "easy": 50
+      }
+    },
+    "test": {
+      "episodes": 300,
+      "trials": 1500,
+      "images": 2400,
+      "type_counts": {
+        "target": 300,
+        "critical_2plus1": 300,
+        "critical_1plus1plus1": 300,
+        "near_2seen": 300,
+        "unrelated": 300
+      },
+      "query_attribute_counts": {
+        "target": {
+          "color": {
+            "red": 59,
+            "blue": 54,
+            "green": 55,
+            "yellow": 38,
+            "purple": 44,
+            "orange": 50
+          },
+          "shape": {
+            "circle": 43,
+            "square": 52,
+            "triangle": 58,
+            "star": 51,
+            "cross": 53,
+            "semicircle": 43
+          },
+          "texture": {
+            "solid": 65,
+            "horizontal_stripes": 52,
+            "vertical_stripes": 47,
+            "diagonal_stripes": 46,
+            "dots": 46,
+            "checkerboard": 44
+          }
+        },
+        "critical_2plus1": {
+          "color": {
+            "red": 47,
+            "blue": 51,
+            "green": 51,
+            "yellow": 45,
+            "purple": 53,
+            "orange": 53
+          },
+          "shape": {
+            "circle": 49,
+            "square": 58,
+            "triangle": 42,
+            "star": 59,
+            "cross": 46,
+            "semicircle": 46
+          },
+          "texture": {
+            "solid": 51,
+            "horizontal_stripes": 55,
+            "vertical_stripes": 53,
+            "diagonal_stripes": 40,
+            "dots": 56,
+            "checkerboard": 45
+          }
+        },
+        "critical_1plus1plus1": {
+          "color": {
+            "red": 41,
+            "blue": 47,
+            "green": 46,
+            "yellow": 59,
+            "purple": 54,
+            "orange": 53
+          },
+          "shape": {
+            "circle": 54,
+            "square": 55,
+            "triangle": 45,
+            "star": 52,
+            "cross": 48,
+            "semicircle": 46
+          },
+          "texture": {
+            "solid": 63,
+            "horizontal_stripes": 45,
+            "vertical_stripes": 48,
+            "diagonal_stripes": 46,
+            "dots": 48,
+            "checkerboard": 50
+          }
+        },
+        "near_2seen": {
+          "color": {
+            "red": 50,
+            "blue": 50,
+            "green": 49,
+            "yellow": 51,
+            "purple": 50,
+            "orange": 50
+          },
+          "shape": {
+            "circle": 50,
+            "square": 51,
+            "triangle": 49,
+            "star": 51,
+            "cross": 49,
+            "semicircle": 50
+          },
+          "texture": {
+            "solid": 51,
+            "horizontal_stripes": 51,
+            "vertical_stripes": 49,
+            "diagonal_stripes": 50,
+            "dots": 49,
+            "checkerboard": 50
+          }
+        },
+        "unrelated": {
+          "color": {
+            "red": 50,
+            "blue": 50,
+            "green": 50,
+            "yellow": 50,
+            "purple": 50,
+            "orange": 50
+          },
+          "shape": {
+            "circle": 50,
+            "square": 50,
+            "triangle": 50,
+            "star": 50,
+            "cross": 50,
+            "semicircle": 50
+          },
+          "texture": {
+            "solid": 50,
+            "horizontal_stripes": 50,
+            "vertical_stripes": 50,
+            "diagonal_stripes": 50,
+            "dots": 50,
+            "checkerboard": 50
+          }
+        }
+      },
+      "structural_difficulty_counts": {
+        "control": 300,
+        "hard": 600,
+        "medium": 300,
+        "easy": 300
+      }
+    }
+  },
+  "calibration_images": 432,
+  "total_images": 3232,
+  "total_trials": 1750,
+  "difficulty_scheme_version": "1.0"
+}

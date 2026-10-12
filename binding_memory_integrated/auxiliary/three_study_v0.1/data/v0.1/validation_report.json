@@ -1,0 +1,140 @@
+{
+  "passed": true,
+  "checks": [
+    "object membership labels",
+    "lure definitions and feature provenance",
+    "no duplicate study set across splits",
+    "balanced types and source positions",
+    "balanced study attributes",
+    "PNG dimensions, mode and sha256",
+    "no identical image pixels",
+    "label-free model input allowlist",
+    "calibration combination coverage",
+    "structural difficulty annotations and shared-target group indexes"
+  ],
+  "splits": {
+    "dev": {
+      "episodes": 50,
+      "trials": 250,
+      "type_counts": {
+        "target": 50,
+        "critical_2plus1": 50,
+        "critical_1plus1plus1": 50,
+        "near_2seen": 50,
+        "unrelated": 50
+      },
+      "structural_difficulty_counts": {
+        "control": 50,
+        "hard": 100,
+        "medium": 50,
+        "easy": 50
+      },
+      "study_attribute_counts": {
+        "color": {
+          "purple": 25,
+          "yellow": 25,
+          "orange": 25,
+          "red": 25,
+          "green": 25,
+          "blue": 25
+        },
+        "shape": {
+          "circle": 25,
+          "semicircle": 25,
+          "cross": 25,
+          "triangle": 25,
+          "square": 25,
+          "star": 25
+        },
+        "texture": {
+          "checkerboard": 25,
+          "solid": 25,
+          "vertical_stripes": 25,
+          "dots": 25,
+          "diagonal_stripes": 25,
+          "horizontal_stripes": 25
+        }
+      },
+      "target_source_positions": {
+        "0": 17,
+        "1": 17,
+        "2": 16
+      },
+      "changed_dimensions": {
+        "critical_2plus1": {
+          "color": 17,
+          "shape": 17,
+          "texture": 16
+        },
+        "near_2seen": {
+          "shape": 17,
+          "texture": 17,
+          "color": 16
+        }
+      }
+    },
+    "test": {
+      "episodes": 300,
+      "trials": 1500,
+      "type_counts": {
+        "target": 300,
+        "critical_2plus1": 300,
+        "critical_1plus1plus1": 300,
+        "near_2seen": 300,
+        "unrelated": 300
+      },
+      "structural_difficulty_counts": {
+        "control": 300,
+        "hard": 600,
+        "medium": 300,
+        "easy": 300
+      },
+      "study_attribute_counts": {
+        "color": {
+          "yellow": 150,
+          "orange": 150,
+          "green": 150,
+          "purple": 150,
+          "blue": 150,
+          "red": 150
+        },
+        "shape": {
+          "circle": 150,
+          "star": 150,
+          "triangle": 150,
+          "semicircle": 150,
+          "square": 150,
+          "cross": 150
+        },
+        "texture": {
+          "checkerboard": 150,
+          "horizontal_stripes": 150,
+          "vertical_stripes": 150,
+          "dots": 150,
+          "solid": 150,
+          "diagonal_stripes": 150
+        }
+      },
+      "target_source_positions": {
+        "0": 100,
+        "1": 100,
+        "2": 100
+      },
+      "changed_dimensions": {
+        "critical_2plus1": {
+          "color": 100,
+          "shape": 100,
+          "texture": 100
+        },
+        "near_2seen": {
+          "shape": 100,
+          "texture": 100,
+          "color": 100
+        }
+      }
+    }
+  },
+  "images_checked": 3232,
+  "trials_checked": 1750,
+  "calibration_images": 432
+}

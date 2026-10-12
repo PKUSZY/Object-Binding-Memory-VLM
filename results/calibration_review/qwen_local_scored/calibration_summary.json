@@ -1,0 +1,88 @@
+{
+  "items": 432,
+  "full_calibration_items": 432,
+  "coverage": 1.0,
+  "invalid_items": 0,
+  "invalid_rate": 0.0,
+  "joint_accuracy": 1.0,
+  "attribute_accuracy": {
+    "color": {
+      "correct_of_all_items": 1.0,
+      "correct_of_valid_items": 1.0,
+      "valid_items": 432,
+      "total_items": 432,
+      "confusion": {
+        "red": {
+          "red": 72
+        },
+        "blue": {
+          "blue": 72
+        },
+        "green": {
+          "green": 72
+        },
+        "yellow": {
+          "yellow": 72
+        },
+        "purple": {
+          "purple": 72
+        },
+        "orange": {
+          "orange": 72
+        }
+      }
+    },
+    "shape": {
+      "correct_of_all_items": 1.0,
+      "correct_of_valid_items": 1.0,
+      "valid_items": 432,
+      "total_items": 432,
+      "confusion": {
+        "circle": {
+          "circle": 72
+        },
+        "square": {
+          "square": 72
+        },
+        "triangle": {
+          "triangle": 72
+        },
+        "hexagon": {
+          "hexagon": 72
+        },
+        "star": {
+          "star": 72
+        },
+        "diamond": {
+          "diamond": 72
+        }
+      }
+    },
+    "texture": {
+      "correct_of_all_items": 1.0,
+      "correct_of_valid_items": 1.0,
+      "valid_items": 432,
+      "total_items": 432,
+      "confusion": {
+        "dots": {
+          "dots": 72
+        },
+        "diagonal_stripes": {
+          "diagonal_stripes": 72
+        },
+        "grid": {
+          "grid": 72
+        },
+        "checkerboard": {
+          "checkerboard": 72
+        },
+        "waves": {
+          "waves": 72
+        },
+        "chevrons": {
+          "chevrons": 72
+        }
+      }
+    }
+  }
+}

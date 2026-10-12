@@ -1,0 +1,11 @@
+{
+  "condition": "image_study_text_probe",
+  "total_trials": 864,
+  "by_split": {
+    "dev": 216,
+    "test": 648
+  },
+  "probe_images_in_inputs": false,
+  "paired_with": "binding_memory_integrated/core",
+  "note": "Study and distractor stimuli match the image-probe track; only the final probe modality changes. Labels are stored separately."
+}

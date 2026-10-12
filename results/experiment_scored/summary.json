@@ -1,0 +1,120 @@
+{
+  "total_trials": 864,
+  "overall": {
+    "n": 864,
+    "valid": 864,
+    "invalid": 0,
+    "correct": 837,
+    "accuracy": 0.96875,
+    "valid_rate": 1.0
+  },
+  "by_split": {
+    "dev": {
+      "n": 216,
+      "valid": 216,
+      "invalid": 0,
+      "correct": 214,
+      "accuracy": 0.9907407407407407,
+      "valid_rate": 1.0
+    },
+    "test": {
+      "n": 648,
+      "valid": 648,
+      "invalid": 0,
+      "correct": 623,
+      "accuracy": 0.9614197530864198,
+      "valid_rate": 1.0
+    }
+  },
+  "by_probe_type": {
+    "critical_recombination": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 128,
+      "accuracy": 0.8888888888888888,
+      "valid_rate": 1.0,
+      "false_accept_rate": 0.1111111111111111,
+      "correct_reject_rate": 0.8888888888888888
+    },
+    "near_lure": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 135,
+      "accuracy": 0.9375,
+      "valid_rate": 1.0,
+      "false_accept_rate": 0.0625,
+      "correct_reject_rate": 0.9375
+    },
+    "target": {
+      "n": 432,
+      "valid": 432,
+      "invalid": 0,
+      "correct": 430,
+      "accuracy": 0.9953703703703703,
+      "valid_rate": 1.0,
+      "target_hit_rate": 0.9953703703703703
+    },
+    "unrelated_lure": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 144,
+      "accuracy": 1.0,
+      "valid_rate": 1.0,
+      "false_accept_rate": 0.0,
+      "correct_reject_rate": 1.0
+    }
+  },
+  "by_condition": {
+    "n04_d0": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 138,
+      "accuracy": 0.9583333333333334,
+      "valid_rate": 1.0
+    },
+    "n04_d4": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 141,
+      "accuracy": 0.9791666666666666,
+      "valid_rate": 1.0
+    },
+    "n08_d0": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 140,
+      "accuracy": 0.9722222222222222,
+      "valid_rate": 1.0
+    },
+    "n08_d4": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 141,
+      "accuracy": 0.9791666666666666,
+      "valid_rate": 1.0
+    },
+    "n12_d0": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 136,
+      "accuracy": 0.9444444444444444,
+      "valid_rate": 1.0
+    },
+    "n12_d4": {
+      "n": 144,
+      "valid": 144,
+      "invalid": 0,
+      "correct": 141,
+      "accuracy": 0.9791666666666666,
+      "valid_rate": 1.0
+    }
+  }
+}

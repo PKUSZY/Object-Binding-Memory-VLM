@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>物体绑定 · 数据集预览</title>
+<style>
+:root{--ink:#182b43;--muted:#62758b;--line:#dce5ed;--paper:#fff;--blue:#245aa5;--green:#17725b;--amber:#986019;--back:#f4f7fa}
+*{box-sizing:border-box}body{margin:0;background:var(--back);color:var(--ink);font:15px/1.65 system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}button,select,input{font:inherit}button,a,select,input{outline-offset:4px}button{cursor:pointer}button:disabled{cursor:default;opacity:.4}a{color:var(--blue)}.wrap{max-width:1370px;margin:auto;padding:32px 32px 50px}.eyebrow{font-size:11px;letter-spacing:2.6px;color:var(--blue);font-weight:750}.hero{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}h1{font-size:34px;line-height:1.3;letter-spacing:-1px;margin:10px 0}h2{font-size:21px;margin:0}p{margin:8px 0;color:var(--muted)}.version{border:1px solid #ccd9e6;background:#edf3fa;color:var(--blue);padding:5px 12px;border-radius:30px;font-size:12px;white-space:nowrap}.stats{display:flex;gap:35px;margin:23px 0 26px}.stat strong{font-size:27px;line-height:1.3;font-variant-numeric:tabular-nums}.stat span{display:block;color:var(--muted);font-size:12px}.tabs{display:flex;gap:6px;border-bottom:1px solid var(--line);margin:24px 0 22px}.tab{border:0;border-bottom:3px solid transparent;background:transparent;padding:10px 18px;color:var(--muted);font-weight:650}.tab.active{color:var(--blue);border-color:var(--blue)}.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:15px 18px;background:var(--paper);border:1px solid var(--line);border-radius:14px}.field{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:13px}select{background:#f7f9fc;border:1px solid var(--line);border-radius:8px;padding:6px 10px;color:var(--ink)}.nav{display:flex;gap:6px}.btn{border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);padding:6px 11px}.btn:hover{background:#edf3fa}.toggle{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:13px;cursor:pointer}.toggle input{accent-color:var(--blue);width:16px;height:16px}.notice{padding:10px 3px;font-size:12px;color:var(--muted)}.section{margin-top:23px}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:13px}.section-head small{color:var(--muted);font-size:12px}.step{font-size:12px;color:var(--blue);margin-right:9px;vertical-align:middle}.study-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.study-card,.query-card{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden}.study-head{padding:13px 18px 0;font-weight:650;font-size:14px}.study-body{display:flex;align-items:center;gap:14px;padding:10px 14px 17px}.study-body img{width:160px;height:160px;display:block;border-radius:9px}.attrs{display:flex;flex-direction:column;gap:5px;font-size:14px}.attrs small{font-size:11px;color:var(--muted);margin-right:5px}.query-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}.query-card{padding:14px}.query-top{min-height:67px}.kind{font-size:13px;font-weight:700}.kind-desc{font-size:11px;color:var(--muted);margin-top:2px}.badge{display:inline-block;font-size:10px;letter-spacing:.5px;border-radius:5px;padding:1px 6px;margin-top:6px;background:#eef7f3;color:var(--green)}.badge.no{background:#fbf2e6;color:var(--amber)}.query-image{width:100%;aspect-ratio:1;object-fit:contain;background:#f5f7f9;border-radius:9px;margin:9px 0}.source-row{display:flex;justify-content:space-between;gap:5px;padding:5px 0;border-bottom:1px solid #f0f3f6;font-size:12px}.origin{color:var(--muted);white-space:nowrap;font-size:11px}.origin.novel{color:var(--amber)}.foot{margin-top:29px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 22px;justify-content:space-between;color:var(--muted);font-size:12px}.legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:12px}.legend span{padding:3px 8px;background:#eaf0f6;border-radius:5px}.blind-note{font-size:12px;color:var(--muted);padding:7px 0}.hidden{display:none!important}.palette{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0 20px}.swatch{background:white;border:1px solid var(--line);padding:7px 13px;border-radius:9px;display:flex;align-items:center;gap:8px}.swatch.active{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}.dot{width:14px;height:14px;border-radius:50%;display:inline-block}.atlas-scroll{overflow:auto;background:white;border:1px solid var(--line);border-radius:14px;padding:15px}.atlas{width:100%;min-width:850px;border-collapse:collapse;table-layout:fixed}.atlas th{font-size:12px;font-weight:600;color:var(--muted);padding:8px}.atlas th:first-child{width:76px}.atlas td{padding:6px}.atlas img{width:100%;display:block;border-radius:7px}.preview-note{max-width:870px}.pill{font-size:11px;padding:3px 9px;border-radius:20px;background:#eaf0f6;color:var(--muted)}
+@media(max-width:1100px){.study-body{flex-direction:column;align-items:flex-start}.study-body img{align-self:center;width:170px;height:170px}.attrs{flex-direction:row;flex-wrap:wrap;font-size:12px}.attrs small{display:none}.query-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.query-top{min-height:65px}}
+@media(max-width:680px){.wrap{padding:21px 16px}h1{font-size:27px}.hero{display:block}.version{display:inline-block;margin-top:10px}.stats{gap:22px}.stat strong{font-size:23px}.study-grid{gap:7px}.study-body{padding:8px}.study-body img{width:100%;height:auto}.study-head{padding:10px 9px 0}.attrs{font-size:10px;gap:1px}.query-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.query-card{padding:10px}.toggle{margin-left:0}.section-head{display:block}.section-head small{display:block;margin-top:4px}.toolbar{padding:12px}.foot{font-size:11px}}
+.difficulty-guide{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}.tier-box{background:#fff;border:1px solid var(--line);border-top:3px solid #8295aa;border-radius:10px;padding:11px 13px}.tier-box strong{font-size:13px}.tier-box p{font-size:12px;line-height:1.5;margin:4px 0}.tier-count{font-size:11px;color:var(--muted)}.tier-box.easy{border-top-color:#287e65}.tier-box.medium{border-top-color:#b48025}.tier-box.hard{border-top-color:#9260ac}.difficulty-note{font-size:12px;padding:10px 3px;color:var(--muted)}.difficulty-tag{display:inline-block;font-size:10px;border-radius:5px;padding:1px 6px;margin:6px 4px 0 0;background:#edf1f6;color:#596c82}.difficulty-tag.easy{background:#eaf6ef;color:#287e65}.difficulty-tag.medium{background:#fff5df;color:#986019}.difficulty-tag.hard{background:#f5edf9;color:#815399}.query-top{min-height:93px}.query-grid.filtered{grid-template-columns:repeat(auto-fit,minmax(180px,280px))}.distance-note{margin-top:8px;font-size:11px;color:var(--muted)}
+@media(max-width:900px){.difficulty-guide{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.query-grid.filtered{grid-template-columns:repeat(2,minmax(0,1fr))}.difficulty-note{font-size:11px}.difficulty-guide{gap:8px}.tier-box{padding:10px}.query-top{min-height:110px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="hero"><div><div class="eyebrow">OBJECT BINDING DATASET</div><h1>物体绑定 · 数据集预览</h1><p class="preview-note">颜色、形状和纹理都见过，完整的物体也见过吗？查看学习图片，以及由同一列表派生的五类测试物体。</p></div><span class="version">v0.1 预览版 · 待感知校准</span></header>
+<div class="stats" id="stats"></div>
+<nav class="tabs" aria-label="预览内容"><button class="tab active" id="episodesTab" aria-selected="true">实验样例</button><button class="tab" id="atlasTab" aria-selected="false">属性图谱</button></nav>
+<section id="episodesPane">
+<div class="toolbar"><label class="field">划分 <select id="split"><option value="dev">开发集 · 50 个列表</option><option value="test">候选测试集 · 300 个列表</option></select></label><label class="field">学习列表 <select id="episode"></select></label><div class="nav"><button class="btn" id="prev" aria-label="上一组">← 上一组</button><button class="btn" id="next" aria-label="下一组">下一组 →</button></div><label class="field">结构难度 <select id="difficulty"><option value="all">全部</option><option value="easy">L1 简单 + Target</option><option value="medium">L2 中等 + Target</option><option value="hard">L3 困难 + Target</option><option value="control">仅 Target 对照</option></select></label><label class="toggle"><input id="reveal" type="checkbox" checked>显示属性、来源和答案</label></div>
+<div class="notice" id="notice"></div>
+<div class="difficulty-guide" id="difficultyGuide"></div>
+<div class="difficulty-note" id="difficultyNote" aria-live="polite"></div>
+<section class="section"><div class="section-head"><h2><span class="step">01</span>学习图片</h2><small>三个物体 · 每个属性维度内不重复</small></div><div class="study-grid" id="study"></div></section>
+<section class="section"><div class="section-head"><h2><span class="step">02</span>测试物体</h2><small>正式评测每次只展示一个测试项；此处并排展示便于检查</small></div><div class="query-grid" id="queries"></div></section>
+<div class="legend" id="legend"><span>2+1：两个属性同源</span><span>1+1+1：三个属性来自三个物体</span><span>Near：恰有一个新属性</span><span>Unrelated：三个属性全新</span></div>
+</section>
+<section class="hidden" id="atlasPane"><div class="section-head"><h2>形状 × 纹理</h2><small>每种颜色 36 个组合 · 校准集每个组合有两张独立渲染图</small></div><p>切换颜色，检查纹理在不同物体上是否清楚。图谱展示校准集的第一组渲染。</p><div class="palette" id="palette"></div><div class="atlas-scroll"><table class="atlas" id="atlas"></table></div></section>
+<footer class="foot"><span>单物体 · 448 × 448 PNG · 原始图像无文字标记</span><span>学习图保留在上下文中；本数据测量绑定识别，不等同于撤图后的内部记忆。</span><a href="sample_episode.png" target="_blank" rel="noopener">打开样例总览图 ↗</a></footer>
+</main>
+<script id="dataset" type="application/json">__DATA_JSON__</script>
+<script>
+'use strict';
+const DATA=JSON.parse(document.getElementById('dataset').textContent);
+const $=id=>document.getElementById(id);const escapeHtml=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ZH=DATA.meta.labels_zh;const DIMS=['color','shape','texture'];const DIM_ZH=['颜色','形状','纹理'];
+const LEVELS=DATA.meta.difficulty_scheme.levels;
+let split='dev',index=0,color='blue',reveal=true;
+const src=record=>DATA.dataPrefix+record.image;
+const attrText=record=>DIMS.map(d=>ZH[record.attributes[d]]).join('、');
+const img=(record,cls='')=>`<a href="${src(record)}" target="_blank" rel="noopener"><img class="${cls}" src="${src(record)}" alt="${reveal?attrText(record):'单物体图片'}"></a>`;
+const sums=DATA.summary;
+$('stats').innerHTML=[['学习列表',Object.values(sums.splits).reduce((s,x)=>s+x.episodes,0)],['测试题',sums.total_trials],['原始图片',sums.total_images],['属性组合',216]].map(([name,value])=>`<div class="stat"><strong>${value.toLocaleString()}</strong><span>${name}</span></div>`).join('');
+for(const option of $('split').options){const s=DATA.summary.splits[option.value];option.textContent=`${option.value==='dev'?'开发集':'候选测试集'} · ${s.episodes} 个列表`;}
+function loadSplit(){split=$('split').value;index=0;$('episode').innerHTML=DATA.episodes[split].map((ep,i)=>`<option value="${i}">${ep.episode_id}</option>`).join('');render();}
+function render(){
+ const ep=DATA.episodes[split][index];if(!ep)return;
+ $('episode').value=index;$('prev').disabled=index===0;$('next').disabled=index===DATA.episodes[split].length-1;
+ $('notice').textContent=split==='dev'?'开发集用于检查图片和调整方案。下方的文字标签与标准答案只出现在预览页，不在模型原始图片中。':'这是尚未冻结的候选测试划分。正式评测前，应在开发集完成感知校准并固定数据版本。';
+ const difficulty=$('difficulty').value;
+ const counts=DATA.summary.splits[split].structural_difficulty_counts;
+ $('difficultyGuide').innerHTML=['easy','medium','hard','control'].map(level=>`<div class="tier-box ${level}"><strong>${LEVELS[level].label}</strong><p>${LEVELS[level].description}</p><span class="tier-count">当前划分 ${counts[level]||0} 题</span></div>`).join('');
+ $('difficultyGuide').classList.toggle('hidden',!reveal);
+ $('difficultyNote').classList.toggle('hidden',!reveal);
+ $('difficultyNote').textContent='结构分层尚未经模型实测校准；2+1 与 1+1+1 同属困难档，不预设二者顺序。'+(['easy','medium','hard'].includes(difficulty)?' 当前同时展示同一学习列表的 Target 对照；它在各档复用，不增加独立样本数。':' Target 是各档共享的正例对照，不参与难度排序。');
+ $('study').innerHTML=ep.study.map((record,i)=>`<article class="study-card"><div class="study-head">学习 ${i+1}</div><div class="study-body">${img(record)}${reveal?`<div class="attrs">${DIMS.map((dim,j)=>`<div><small>${DIM_ZH[j]}</small>${ZH[record.attributes[dim]]}</div>`).join('')}</div>`:''}</div></article>`).join('');
+ const tests=ep.tests.filter(test=>difficulty==='all'||test.structural_difficulty===difficulty||test.structural_difficulty==='control');
+ $('queries').classList.toggle('filtered',difficulty!=='all');
+ $('queries').innerHTML=tests.map((test,i)=>{const info=DATA.meta.test_types[test.test_type];const level=test.structural_difficulty;return `<article class="query-card"><div class="query-top"><div class="kind">${reveal?info.label:'测试 '+(i+1)}</div>${reveal?`<div class="kind-desc">${info.description}</div><span class="difficulty-tag ${level}">${LEVELS[level].label}</span><span class="badge ${test.answer==='NO'?'no':''}">标准答案 ${test.answer}</span>`:'<div class="kind-desc">这个完整物体出现过吗？</div>'}</div>${img(test.query,'query-image')}${reveal?DIMS.map(dim=>{const source=test.feature_sources[dim];return `<div class="source-row"><span>${ZH[test.query.attributes[dim]]}</span><span class="origin ${source===null?'novel':''}">${source===null?'未出现':'← 学习 '+(source+1)}</span></div>`}).join('')+`<div class="distance-note">新属性 ${test.novel_feature_count} 项 · 距最近物体 ${test.nearest_hamming_distance} 项差异</div>`:'<div class="blind-note">勾选上方开关查看标准答案</div>'}</article>`}).join('');
+ $('legend').classList.toggle('hidden',!reveal);
+}
+$('split').addEventListener('change',loadSplit);$('episode').addEventListener('change',e=>{index=Number(e.target.value);render()});
+$('prev').addEventListener('click',()=>{if(index>0){index--;render()}});$('next').addEventListener('click',()=>{if(index<DATA.episodes[split].length-1){index++;render()}});
+$('difficulty').addEventListener('change',render);
+$('reveal').addEventListener('change',e=>{reveal=e.target.checked;$('difficulty').disabled=!reveal;if(!reveal)$('difficulty').value='all';render()});
+function showTab(name){for(const tab of ['episodes','atlas']){const active=tab===name;$(tab+'Pane').classList.toggle('hidden',!active);$(tab+'Tab').classList.toggle('active',active);$(tab+'Tab').setAttribute('aria-selected',active);}if(name==='atlas')renderAtlas();}
+$('episodesTab').addEventListener('click',()=>showTab('episodes'));$('atlasTab').addEventListener('click',()=>showTab('atlas'));
+function renderAtlas(){
+ $('palette').innerHTML=DATA.meta.attributes.color.map(c=>`<button class="swatch ${color===c?'active':''}" data-color="${c}"><span class="dot" style="background:rgb(${DATA.meta.colors_rgb[c].join(',')})"></span>${ZH[c]}</button>`).join('');
+ for(const button of $('palette').querySelectorAll('button'))button.addEventListener('click',()=>{color=button.dataset.color;renderAtlas()});
+ const lookup=new Map(DATA.calibration.map(record=>[[record.attributes.color,record.attributes.shape,record.attributes.texture].join('/'),record]));
+ $('atlas').innerHTML='<thead><tr><th>形状 / 纹理</th>'+DATA.meta.attributes.texture.map(t=>`<th scope="col">${ZH[t]}</th>`).join('')+'</tr></thead><tbody>'+DATA.meta.attributes.shape.map(shape=>`<tr><th scope="row">${ZH[shape]}</th>${DATA.meta.attributes.texture.map(texture=>{const record=lookup.get([color,shape,texture].join('/'));return `<td>${record?img(record):'—'}</td>`}).join('')}</tr>`).join('')+'</tbody>';
+}
+loadSplit();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Model weights and local caches
+models/
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# Source archives, historical duplicate, and unrelated course material
+*.zip
+object_binding_memory_dataset/
+Vision1_Homework1.pdf
+物体绑定记忆数据集设计简述.docx
+
+# Slurm logs and transient progress streams
+slurm-*.out
+slurm-*.err
+results/experiment_raw/progress.jsonl
+results/text_query_benchmark/raw/progress.jsonl
+results/calibration_review/contact_sheet_*.jpg
+results/calibration_review/human_answer_key.csv
+results/calibration_review/calibration_raw.template.jsonl

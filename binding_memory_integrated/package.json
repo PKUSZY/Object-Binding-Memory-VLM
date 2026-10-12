@@ -1,0 +1,12 @@
+{
+  "name": "binding-memory-integrated",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node core/generate.js && node build_core.js",
+    "validate": "node validate_integrated.js"
+  },
+  "dependencies": {
+    "sharp": "0.35.5"
+  }
+}

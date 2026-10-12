@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "original_archive": "binding_dataset_v0.1_preview.zip",
+  "protected_files_identical_to_original_archive": 3236,
+  "includes": [
+    "all stimulus PNGs",
+    "model input JSONL",
+    "answer key JSONL"
+  ]
+}

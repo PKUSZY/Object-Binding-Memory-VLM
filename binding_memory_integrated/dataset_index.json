@@ -1,0 +1,33 @@
+{
+  "name": "物体绑定记忆整合数据集",
+  "version": "1.1",
+  "primary_track": "core",
+  "tracks": {
+    "core": {
+      "purpose": "design-conformant main experiment",
+      "root": "core",
+      "trials": 864,
+      "groups": 144,
+      "dev_trials": 216,
+      "test_trials": 648,
+      "study_counts": [4, 8, 12],
+      "distractor_counts": [0, 4],
+      "yes_trials": 432,
+      "no_trials": 432,
+      "input_pattern": "core/inputs/{dev,test}.jsonl",
+      "label_pattern": "core/labels/{dev,test}.jsonl"
+    },
+    "supplementary_three_study": {
+      "purpose": "separate nonconformant robustness benchmark, retained with provenance",
+      "root": "auxiliary/three_study_v0.1",
+      "trials": 1750,
+      "episodes": 350,
+      "study_count": 3,
+      "distractor_count": 0,
+      "yes_trials": 350,
+      "no_trials": 1400,
+      "input_pattern": "auxiliary/three_study_v0.1/data/v0.1/inputs/{dev,test}.jsonl",
+      "label_pattern": "auxiliary/three_study_v0.1/data/v0.1/labels/{dev,test}.jsonl"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "name": "Object Binding / 单物体属性绑定",
+  "version": "0.1.0-preview",
+  "status": "preview_unvalidated_by_vlm",
+  "generator": "binding_dataset/generate.py",
+  "seed": 20261007,
+  "size": [
+    448,
+    448
+  ],
+  "study_size": 3,
+  "python": "3.12.14",
+  "pillow": "12.3.0",
+  "generator_sha256": "47b60b6706973517c6b68046604ba2dde8e6538a8272877e5a27e6035b9e2798",
+  "rendering": {
+    "background_rgb": [
+      245,
+      247,
+      249
+    ],
+    "nominal_area_pixels": 47500,
+    "area_jitter_fraction": 0.05,
+    "position_jitter_pixels": 7,
+    "supersampling": 2
+  },
+  "attributes": {
+    "color": [
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "purple",
+      "orange"
+    ],
+    "shape": [
+      "circle",
+      "square",
+      "triangle",
+      "star",
+      "cross",
+      "semicircle"
+    ],
+    "texture": [
+      "solid",
+      "horizontal_stripes",
+      "vertical_stripes",
+      "diagonal_stripes",
+      "dots",
+      "checkerboard"
+    ]
+  },
+  "colors_rgb": {
+    "red": [
+      213,
+      66,
+      68
+    ],
+    "blue": [
+      48,
+      114,
+      202
+    ],
+    "green": [
+      42,
+      153,
+      99
+    ],
+    "yellow": [
+      232,
+      190,
+      43
+    ],
+    "purple": [
+      142,
+      84,
+      186
+    ],
+    "orange": [
+      231,
+      123,
+      38
+    ]
+  },
+  "labels_zh": {
+    "red": "红色",
+    "blue": "蓝色",
+    "green": "绿色",
+    "yellow": "黄色",
+    "purple": "紫色",
+    "orange": "橙色",
+    "circle": "圆形",
+    "square": "正方形",
+    "triangle": "三角形",
+    "star": "五角星",
+    "cross": "十字形",
+    "semicircle": "半圆形",
+    "solid": "纯色",
+    "horizontal_stripes": "横条纹",
+    "vertical_stripes": "竖条纹",
+    "diagonal_stripes": "斜条纹",
+    "dots": "圆点",
+    "checkerboard": "棋盘格"
+  },
+  "test_types": {
+    "target": {
+      "label": "Target",
+      "description": "真正出现过",
+      "answer": "YES"
+    },
+    "critical_2plus1": {
+      "label": "Critical · 2+1",
+      "description": "两项同源，一项重组",
+      "answer": "NO"
+    },
+    "critical_1plus1plus1": {
+      "label": "Critical · 1+1+1",
+      "description": "三项来自不同物体",
+      "answer": "NO"
+    },
+    "near_2seen": {
+      "label": "Near lure",
+      "description": "两项已见，一项全新",
+      "answer": "NO"
+    },
+    "unrelated": {
+      "label": "Unrelated lure",
+      "description": "三项属性均未见",
+      "answer": "NO"
+    }
+  },
+  "instruction": "请判断测试物体的颜色、形状和纹理组合，是否在学习阶段的某一张图片中完整出现过。同一物体按颜色、形状、纹理三项均相同定义；位置、大小和纹理细节位置的轻微变化不影响身份。只有三个属性同时匹配同一个学习物体才回答 YES，否则回答 NO。仅输出 YES 或 NO。",
+  "notes": [
+    "学习图在上下文中，不测原图撤除后的内部记忆。",
+    "原始图片没有标签；预览页仅供人工检查。",
+    "test 是候选测试划分，需在开发集完成感知校准后冻结版本。"
+  ],
+  "difficulty_scheme": {
+    "version": "1.0",
+    "kind": "structural_not_empirical",
+    "empirically_calibrated": false,
+    "basis": "availability_of_novel_attribute_rejection_cues",
+    "levels": {
+      "easy": {
+        "rank": 1,
+        "label": "L1 简单",
+        "description": "三个属性全新，有三个可用于拒绝的线索。"
+      },
+      "medium": {
+        "rank": 2,
+        "label": "L2 中等",
+        "description": "当前数据恰有一个新属性，需要找到这个拒绝线索。"
+      },
+      "hard": {
+        "rank": 3,
+        "label": "L3 困难",
+        "description": "三个属性都见过，必须核对是否属于同一物体。"
+      },
+      "control": {
+        "rank": null,
+        "label": "Target 对照",
+        "description": "完整组合出现过，作为各档共享的正例对照，不参与难度排序。"
+      }
+    },
+    "notes": [
+      "这是新异线索可用性的先验分层，不是 VLM 实测难度排名。",
+      "2+1 与 1+1+1 同属 hard；二者的实际难度次序需分别测量。",
+      "各档诱饵均为 NO；评测须同时报告共享 target 命中率，不能只报诱饵准确率。",
+      "共享 target 不构成新增独立样本；不确定性应按 episode 重采样。"
+    ]
+  }
+}

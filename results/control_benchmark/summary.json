@@ -1,0 +1,17 @@
+{
+  "n": 2177,
+  "valid": 2172,
+  "correct": 2152,
+  "by_control": {
+    "pairwise": {
+      "n": 2150,
+      "valid": 2150,
+      "accuracy": 1.0
+    },
+    "strong_recombination": {
+      "n": 27,
+      "valid": 22,
+      "accuracy": 0.07407407407407407
+    }
+  }
+}

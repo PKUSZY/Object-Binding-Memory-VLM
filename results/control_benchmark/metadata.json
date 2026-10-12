@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "pairwise_trials": 2150,
+  "strong_recombination_trials": 27,
+  "strong_conditions": {
+    "study_counts": [
+      8,
+      12
+    ],
+    "pairwise_seen_count": 3,
+    "full_triple_seen": false
+  },
+  "note": "Strong condition is impossible for the original 4-image groups; it is reported only for groups where all three attribute pairs are present but the full triple is absent."
+}

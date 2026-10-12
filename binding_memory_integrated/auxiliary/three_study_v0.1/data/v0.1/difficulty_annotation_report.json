@@ -1,0 +1,9 @@
+{
+  "scheme_version": "1.0",
+  "protected_files": 3236,
+  "images_inputs_labels_unchanged": true,
+  "before_sha256": "8e583d96287a0a2434bed6ea78e52e689d54bf8c3c0141da1dd2ae36bd2441f9",
+  "after_sha256": "8e583d96287a0a2434bed6ea78e52e689d54bf8c3c0141da1dd2ae36bd2441f9",
+  "annotator_sha256": "62e97d9fda1ea540d77d2e7616fae05528734acfe45d3564009dbb872e23ecfe",
+  "note": "Original generator_sha256 retained as provenance of original image generation."
+}

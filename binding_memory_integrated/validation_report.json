@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "core": {
+    "groups": 144,
+    "trials": 864,
+    "dev_trials": 216,
+    "test_trials": 648,
+    "answers": {
+      "YES": 432,
+      "NO": 432
+    },
+    "study_pngs": 216,
+    "probe_pngs": 432,
+    "distractor_pngs": 4,
+    "calibration_pngs": 432
+  },
+  "supplementary_three_study": {
+    "dev_trials": 250,
+    "test_trials": 1500,
+    "episodes": 350,
+    "images": 3232,
+    "answers": {
+      "YES": 350,
+      "NO": 1400
+    },
+    "critical_2plus1_with_seen_pair": 350,
+    "critical_1plus1plus1_pairwise_unseen": 350,
+    "calibration_images": 432
+  },
+  "interpretation": "Only core is conformant with the 864-trial design. Supplementary trials require separate reporting."
+}

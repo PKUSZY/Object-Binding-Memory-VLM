@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": [
+    "study/query card counts",
+    "five answers",
+    "three structural tiers and target control",
+    "tier filters keep exactly one shared target",
+    "hard keeps both critical subtypes",
+    "hidden answers also hide and disable difficulty",
+    "split-specific difficulty counts",
+    "dev/test navigation",
+    "previous/next boundaries",
+    "answer hiding",
+    "all displayed images load",
+    "36 atlas combinations",
+    "palette changes images",
+    "390px mobile overflow before and after filtering",
+    "no browser JavaScript errors"
+  ]
+}
