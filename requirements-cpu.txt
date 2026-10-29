@@ -1,0 +1,4 @@
+# CPU data generation, validation, behavioral scoring and unit tests.
+# The existing qwen3vl environment already satisfies these exact versions.
+numpy==2.4.6
+pillow==12.3.0

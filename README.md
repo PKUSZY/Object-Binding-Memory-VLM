@@ -1,160 +1,111 @@
-# Object Binding Memory VLM Benchmark
+# Object Binding Memory VLM · BindMem
 
-一个用于测试视觉语言模型“物体属性绑定记忆”的可复现实验仓库。模型需要判断一个由**颜色、形状、表面纹理**组成的完整物体是否在学习阶段出现过。
+评测视觉语言模型能否区分“见过颜色、纹理和形状”与“见过由它们共同构成的完整物体”。项目包含受控合成图像生成、严格重组负例、Qwen3-VL／LLaVA 推理、按随机组统计及可追溯的真实错误案例。
 
-例如，学习阶段出现过“红色圆形＋点状纹理”，测试时再次询问这一完整组合，正确答案是 `YES`。如果红色、圆形和点状纹理分别出现过，但从未组成同一个物体，正确答案是 `NO`。项目因此区分“属性被分别识别过”和“属性绑定关系被记住”。
+当前版本以 **BindMem v2 + 匹配重组梯度** 为主，只做行为实验。每题的学习图仍在当前上下文中，不测试跨会话长期记忆；探针相关代码仅作历史保留。
 
-## 当前结果
+## 先看报告
 
-正式模型为 `Qwen3-VL-8B-Instruct`，使用单张 NVIDIA RTX 3090、确定性推理（`do_sample=False`）。主实验、校准和两个控制轨道已经运行完成。
+- [完整项目报告](PROJECT_REPORT_COMPLETE.md)：实验目的、输入输出、全套 Qwen 成绩、LLaVA 同题比较、置信区间与真实误认。
+- [图文简报](reports/bindmem_complete_20261029/brief.md)：面向不了解项目的读者。
+- [逐任务成功率](reports/bindmem_complete_20261029/appendix_qwen_tasks.md)、[17 个实际输入输出案例](reports/bindmem_complete_20261029/appendix_input_output.md)。
+- [14 张设计与结果图](reports/bindmem_complete_20261029/figures/)、[完整精度表格](reports/bindmem_complete_20261029/tables/)、[案例证据](reports/bindmem_complete_20261029/evidence/)。
 
-| 轨道 | 规模 | 结果 |
-|---|---:|---:|
-| 主图片探测 | 864 题 | 837/864 = **96.88%** |
-| 感知校准 | 432 图 | 颜色、形状、纹理和联合准确率均 **100%** |
-| 双图属性匹配 | 2,150 题 | **100%** |
-| 强重组诱饵 | 27 题 | 2/27 = **7.41%** 总准确率；22 条有效回答中 2 条正确 |
-| 图片学习、文字探测 | 864 题 | 829/864 = **95.95%** |
+GitHub 保存 Markdown、轻量 PNG/SVG、CSV/JSON 和小型案例网页。大型 HTML、PDF、ZIP 导出留在本地，不上传；本地完整版本的使用说明见[报告目录](reports/bindmem_complete_20261029/README.md)。
 
-主实验的主要错误来自 `critical_recombination`：模型有时会把三个熟悉属性误判为一个曾经出现过的完整物体。文字探测条件的 target 命中率为 92.36%，但 critical recombination 正确拒绝率提高到 98.61%。这些轨道分别统计，不能合并成一个总分。
+## 已完成的实验
 
-完整方法和解释边界见 [`PROJECT_REPORT.md`](PROJECT_REPORT.md)，执行清单见 [`PROJECT_GUIDE.md`](PROJECT_GUIDE.md)。
+| 模型／实验 | 正式 test 题数 | 范围 |
+| --- | ---: | --- |
+| Qwen3-VL-8B，原 v2 | 69,840 | L0–L5、全部问法；加 dev 共 93,120 题 |
+| Qwen3-VL-8B，六物体梯度 | 5,760 | Q1/Q2/Q3，已见候选属性对数 k=0/1/2/3 |
+| LLaVA-1.5-7B，核心比较 | 1,680 | 二维校准及 L2 的 Q1/Q2/Q3 |
+| LLaVA-1.5-7B，六物体梯度 | 3,840 | Q1/Q3，k=0/1/2/3 |
+
+LLaVA 的 5,520 题均与 Qwen 按相同 trial_id 比较，保留全部 240 个正式随机组；不代表 LLaVA 已完成全部 v2。全量 LLaVA 的部分输出只作探索性记录，范围缩减过程已在报告中披露。
+
+Qwen 的基础识别和简单图片判断较好，但严格图片判断对强重组负例的误认率为 56.25%；匹配梯度的图片误认率随 k 从 0 增至 3，由 0% 上升至 39.17%。LLaVA 在当前多图图片判断协议下全答 YES，准确率 50% 来自接受偏向。完整解释需同时看目标命中、负例误认、基础识别与模型多图适配限制。
 
 ## 仓库结构
 
 ```text
-.
-├── binding_memory_integrated/       # 可重建的数据集
-│   ├── core/                         # 主实验：864 题
-│   └── auxiliary/three_study_v0.1/   # 独立补充基准：1,750 题
-├── results/                          # runner、评分器、Slurm 脚本和已汇总结果
-├── PROJECT_REPORT.md                 # 面向读者的项目报告
-├── PROJECT_GUIDE.md                  # 资源与执行说明
-└── README.md
+bindmem/             v2 生成、渲染、验证、Qwen 推理与统计
+bindmem_extra/       LLaVA 适配、匹配梯度、同题比较、真实案例
+scripts/             Slurm、流程检查与报告生成脚本
+tests/              CPU 协议、评分和断点复用测试
+reports/             可分享的轻量报告、图表与证据
+docs/               历史版本说明
+binding_memory_integrated/   v1 数据与实现，历史保留
+results/             v1 环境脚本与历史结果
+models/              本地权重，不上传
+data/                本地生成的 v2／梯度数据，不上传
+runs/                本地原始回复、评分、采集数据，不上传
 ```
 
-主数据集 `core/` 包含 6 种颜色、6 种形状、6 种纹理，24 个随机种子，学习图数量 4/8/12，干扰图数量 0/4。共有 144 个条件组和 864 道题，dev 216、test 648，正负样本各 432。图片文件名使用无语义哈希；标准答案位于 `labels/`，不能发送给模型。
+入口：[研究目标](goal.md) · [v2 运行说明](bindmem/README.md) · [脚本索引](scripts/README.md) · [补充实验设计](SUPPLEMENT_EXPERIMENTS.md) · [已完成精简实验](PRIORITY_EXPERIMENTS.md)。历史资料见 [v1 README](docs/README_V1.md)、[v1 报告](PROJECT_REPORT.md)。旧版本与 v2 的结果不混用。
 
-## 1. 获取与验证数据集
+## 环境
 
-需要 Node.js 18 或更高版本。进入数据集目录后安装锁定依赖并验证结构：
+原计算节点使用 Python 3.11、torch 2.10.0+cu128、transformers 5.19.0、Pillow 12.3.0、NumPy 2.4.6、accelerate 1.15.0，单张 RTX 3090。**现有 `qwen3vl` 环境无需调整。**
 
-```bash
-cd binding_memory_integrated
-npm ci
-npm run validate
-```
-
-如需从生成器重建主轨道：
+CPU 生成／统计／测试的依赖见 [requirements-cpu.txt](requirements-cpu.txt)。新机器使用独立环境安装，GPU 环境按[现有安装流程](results/QWEN_LOCAL_SETUP.md)及[模型依赖](results/requirements-qwen.txt)配置；不要在已有可运行环境中盲目覆盖 PyTorch/CUDA。
 
 ```bash
-npm run build
-npm run validate
-```
-
-`validate` 会检查题目数量、图片格式、输入字段隔离、标签逻辑和诱饵约束。生成器重建前建议备份已有数据；模型运行时只读取 `core/inputs/{dev,test}.jsonl`，不要把 `trials.jsonl`、`groups.jsonl` 或 `labels/` 发送给模型。
-
-## 2. 安装 Qwen 环境
-
-推理脚本需要 Python 3.11、CUDA 版 PyTorch、Transformers、Accelerate、Qwen 视觉工具和 Pillow。集群用户应先申请 GPU 节点，再加载 CUDA 模块：
-
-```bash
-module load cuda12.8
-conda create -n qwen3vl python=3.11 -y
+git clone https://github.com/PKUSZY/Object-Binding-Memory-VLM.git
+cd Object-Binding-Memory-VLM
 conda activate qwen3vl
-python -m pip install --upgrade pip
-python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
-python -m pip install -r results/requirements-qwen.txt
+python -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-复现实验使用的版本为 Python 3.11.17、PyTorch 2.10.0+cu128、Transformers 5.19.0、Accelerate 1.15.0、`qwen-vl-utils` 0.0.14、Pillow 12.3.0 和 Safetensors 0.8.0。PyTorch/CUDA wheel 需根据目标 GPU 与集群驱动调整；其他 Python 依赖已在 requirements 文件中固定。
+报告依赖单独列在 [requirements-report.txt](requirements-report.txt)，可装在独立报告环境。完整报告重建需要本地全量运行结果和中文字体，见[脚本说明](scripts/README.md)；阅读已发布 Markdown 和图片无需安装依赖。
 
-也可以使用 [`results/QWEN_LOCAL_SETUP.md`](results/QWEN_LOCAL_SETUP.md) 中的完整安装和 CUDA 排查说明。安装后必须确认：
+## 从零运行
+
+下列命令从仓库根目录执行。生成和验证用 CPU；模型推理必须在已分配的 GPU 计算节点执行。先用小规模目录检查流程，正式生成使用新的目录，生成器拒绝覆盖非空目录。
 
 ```bash
-nvidia-smi -L
-python -c 'import torch; print(torch.__version__, torch.version.cuda, torch.cuda.is_available())'
+# 小规模全流程输入检查，不加载模型
+python -m bindmem.generate --output data/bindmem_v2_smoke --groups 8
+python -m bindmem.validate --data data/bindmem_v2_smoke
+python -m bindmem.run --data data/bindmem_v2_smoke --dry-run
+
+# 正式数据：80 dev 组、240 test 组
+python -m bindmem.generate --output data/bindmem_v2 --groups 320
+python -m bindmem.validate --data data/bindmem_v2
+python -m bindmem_extra.gradient --output data/bindmem_gradient_n6 --groups 320 --objects 6
+python -m bindmem_extra.gradient --output data/bindmem_gradient_n6 --validate-only
 ```
 
-`torch.cuda.is_available()` 必须为 `True`。模型下载需要较大的磁盘空间，模型权重不会提交到 Git 仓库：
+准备 Qwen 本地权重至 `models/Qwen3-VL-8B-Instruct`，下载流程见[环境说明](results/QWEN_LOCAL_SETUP.md)。LLaVA 可在可联网的登录节点下载固定版本：
 
 ```bash
-python results/download_qwen3vl.py \
-  --model Qwen/Qwen3-VL-8B-Instruct \
-  --output models/Qwen3-VL-8B-Instruct
+python scripts/prepare_llava.py \
+  --revision b234b804b114d9e37bb655e11cbbb5f5e971b7a9 \
+  --output models/llava-1.5-7b-hf
 ```
 
-如需使用国内 Hugging Face 镜像，可在下载前按集群规定设置 `HF_ENDPOINT`；不要把访问令牌写入脚本或提交到仓库。
-
-## 3. 运行实验
-
-### 主图片探测
-
-本地直接运行：
+在 GPU 节点上，分别运行两个模型完全相同的严格绑定核心任务：
 
 ```bash
-python results/run_qwen_local_experiment.py \
-  --model models/Qwen3-VL-8B-Instruct \
-  --split both
-python results/score_experiment.py
+python -m bindmem.run --data data/bindmem_v2 \
+  --model models/Qwen3-VL-8B-Instruct --output runs/fresh/qwen_strict \
+  --split test --levels L2 --questions Q1 Q2 Q3
+python -m bindmem_extra.inference --backend llava --data data/bindmem_v2 \
+  --model models/llava-1.5-7b-hf --output runs/fresh/llava_strict \
+  --split test --levels L2 --questions Q1 Q2 Q3
+python -m bindmem_extra.score --data data/bindmem_v2 \
+  --run-a runs/fresh/qwen_strict --run-b runs/fresh/llava_strict \
+  --output runs/fresh/strict_comparison
 ```
 
-Slurm 运行完整主实验：
+这个最小例子是 1,440 道 L2 test，不包含正式核心比较中的 240 道校准题。完整覆盖与原目录续跑见运行文档；六物体梯度可对同一 `data/bindmem_gradient_n6` 使用 `bindmem_extra.inference` 的 `--backend qwen` / `--backend llava` 和 `--questions Q1 Q3`。
 
-```bash
-sbatch results/run_qwen_binding.sbatch
-```
+需要 Slurm 长期作业时，查看[脚本索引](scripts/README.md)。提交前核对本集群的 partition、qos、排除节点和 CUDA module；原 `bindmem_llava_priority.sbatch` 依赖已有 Qwen 结果与复用来源，不是新克隆的一键从零脚本。请用新输出目录，勿覆盖已完成运行。
 
-### 感知校准
+## 数据与评分约定
 
-校准单独评估颜色、形状和纹理识别，不参与主实验分数：
+输入与标签分离：模型只读取 `inputs/{dev,test}.jsonl`，标准答案、属性标签和题目类型不额外送入模型。每题独立、确定性生成、最多 80 个新 token；无效回答按错误计分。统计报告包含准确率、目标命中、误认、拒绝、成对正确率及按随机组 bootstrap 的 95% 区间，不跨任务混算一个总准确率。
 
-```bash
-sbatch results/run_qwen_calibration.sbatch
-```
+运行目录记录数据、模型、依赖和代码指纹；相同命令支持断点续跑，配置变化会拒绝混写。探针不在当前实验范围内。四物体无法在固定候选单属性频数下覆盖完整 0–3 梯度，因此正式梯度使用六物体；原因与控制边界见完整报告。
 
-### 双图和强重组控制
-
-控制实验用于区分基础视觉/直接比较能力与完整绑定能力：
-
-```bash
-sbatch results/run_qwen_controls.sbatch
-```
-
-### 图片学习、文字探测
-
-该条件使用同样的学习图片和干扰图片，但最后不发送测试图片，改用文字询问颜色、形状和纹理组合：
-
-```bash
-sbatch results/run_qwen_text_query.sbatch
-```
-
-所有 runner 都会逐题保存结果，并根据已有 `trial_id` 断点续跑。可用以下命令查看作业：
-
-```bash
-squeue -u "$USER"
-tail -f slurm-qwen-binding-<JOBID>.out
-```
-
-## 4. 查看结果
-
-已完成的汇总文件包括：
-
-- [`results/experiment_scored/summary.json`](results/experiment_scored/summary.json)：主图片探测；
-- [`results/calibration_review/qwen_local_scored/calibration_summary.json`](results/calibration_review/qwen_local_scored/calibration_summary.json)：感知校准；
-- [`results/control_benchmark/summary.json`](results/control_benchmark/summary.json)：双图和强重组控制；
-- [`results/text_query_benchmark/scored/summary.json`](results/text_query_benchmark/scored/summary.json)：文字探测；
-- [`PROJECT_REPORT.md`](PROJECT_REPORT.md)：面向他人的完整说明。
-
-评分规则是：只有严格的 `YES` 或 `NO` 才算有效；无效输出按错误计入准确率。主实验需要同时报告总体准确率、target 命中率和各类诱饵错误接受率。置信区间应按 seed 或学习列表整组重采样，因为同一学习列表中的多道题共享学习图片。
-
-## 5. 复现注意事项
-
-- 这是上下文内绑定识别实验：学习图片保留在当前题目的上下文中，不能直接解释为跨会话长期记忆。
-- 主实验、三学习图补充基准、校准、控制和文字探测是不同轨道，不能直接合并统计。
-- `models/`、Slurm 日志、临时进度流和缓存文件默认被 Git 忽略；逐题原始回答与汇总结果保留，用于复查和重新评分。提交前仍应确认没有包含模型权重、API token 或个人路径。
-- 当前结果是单模型、单次固定推理设置的结果。模型间比较和按 seed 的置信区间属于后续工作。
-
-## 引用与复用
-
-如果使用本仓库，请引用项目报告并注明模型版本、数据集版本、推理参数和运行硬件。数据集生成代码、验证器、推理 runner 和评分器均保留在仓库中，便于复查实验协议。
+本次上传不新增模型权重、生成数据、原始回复、缓存、Slurm 日志或大型报告附件。先前提交的 v1 文件保留，以免破坏历史复现路径。

@@ -1,5 +1,6 @@
 # Model weights and local caches
 models/
+.cache/
 **/node_modules/
 **/__pycache__/
 *.py[cod]
@@ -20,3 +21,25 @@ results/text_query_benchmark/raw/progress.jsonl
 results/calibration_review/contact_sheet_*.jpg
 results/calibration_review/human_answer_key.csv
 results/calibration_review/calibration_raw.template.jsonl
+
+# BindMem v2 reproducible generated data, model outputs and probe tensors
+data/bindmem_v2*/
+data/bindmem_gradient*/
+runs/
+
+# Local locks, credentials, editor state and diagnostics
+data/.*.lock
+*.log*
+.env
+.env.*
+!.env.example
+.agents/
+.codex/
+.vscode/
+.idea/
+
+# Large report exports stay local; publish Markdown, lightweight figures and tables.
+reports/**/*.pdf
+reports/**/report.html
+reports/**/appendix_input_output.html
+reports/**/input_output_examples.html

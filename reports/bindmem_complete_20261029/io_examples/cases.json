@@ -1,0 +1,3236 @@
+[
+  {
+    "case": 1,
+    "title": "属性识别",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "9b8da42a2aabf51b0bbff4820b15",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L0",
+      "query": [
+        {
+          "text": "Identify the single study object. Output one JSON object with exactly color, texture, shape. Allowed values: color: red, yellow, blue, green, purple, orange; texture: solid, stripes, dots, grid; shape: circle, triangle, square, star, pentagon, hexagon.",
+          "type": "text"
+        }
+      ],
+      "question": "CAL",
+      "response_kind": "attributes",
+      "split": "test",
+      "study_images": [
+        "images/70473377e62f1a6ab95a092dd8fef412.png"
+      ],
+      "trial_id": "9b8da42a2aabf51b0bbff4820b15"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/70473377e62f1a6ab95a092dd8fef412.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "Identify the single study object. Output one JSON object with exactly color, texture, shape. Allowed values: color: red, yellow, blue, green, purple, orange; texture: solid, stripes, dots, grid; shape: circle, triangle, square, star, pentagon, hexagon.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "9b8da42a2aabf51b0bbff4820b15",
+      "timestamp": "2026-10-23T07:48:32.398315+00:00",
+      "raw_response": "{\n  \"color\": \"orange\",\n  \"texture\": \"grid\",\n  \"shape\": \"pentagon\"\n}",
+      "parsed_answer": {
+        "color": "orange",
+        "texture": "grid",
+        "shape": "pentagon"
+      },
+      "error": null,
+      "activation_file": "activations/9b8da42a2aabf51b0bbff4820b15.npz",
+      "input_tokens": 192,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 800
+    },
+    "private_label_not_sent_to_model": {
+      "answer": {
+        "color": "orange",
+        "shape": "pentagon",
+        "texture": "grid"
+      },
+      "cluster_id": "seed20261022-g00080",
+      "level": "L0",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": null,
+      "probe": [
+        "orange",
+        "grid",
+        "pentagon"
+      ],
+      "probe_type": "calibration",
+      "question": "CAL",
+      "replicate": 80,
+      "semantic_id": "f869103a10b7d07a7f5cecfb",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "orange",
+            "grid",
+            "pentagon"
+          ]
+        ]
+      ],
+      "task": "attributes",
+      "total_objects": 1,
+      "trial_id": "9b8da42a2aabf51b0bbff4820b15"
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_core/predictions.jsonl"
+    },
+    "images": {
+      "images/70473377e62f1a6ab95a092dd8fef412.png": "3be72350caf08bd6b072c642d6590b32dc9b9ca5d92d72f92ac82142118edce5"
+    }
+  },
+  {
+    "case": 2,
+    "title": "图片查询：判断是否见过",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "30c54a1e9f1f57c789a9530438b1",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "image": "images/18c88fe7497f908d2c7896fcb9b912c0.png",
+          "type": "image"
+        },
+        {
+          "text": "Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q1",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+        "images/84d81d37258cb728a059f75245c8feff.png",
+        "images/52e44c21fd0385a23728dfb3b5b902d9.png",
+        "images/532828d8a133aea18c185e025ec2e9f9.png"
+      ],
+      "trial_id": "30c54a1e9f1f57c789a9530438b1"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/84d81d37258cb728a059f75245c8feff.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/52e44c21fd0385a23728dfb3b5b902d9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/532828d8a133aea18c185e025ec2e9f9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/18c88fe7497f908d2c7896fcb9b912c0.png",
+            "type": "image",
+            "max_pixels": 802816
+          },
+          {
+            "text": "Did this complete object occur in the study set? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "30c54a1e9f1f57c789a9530438b1",
+      "timestamp": "2026-10-25T09:16:56.680953+00:00",
+      "raw_response": "YES",
+      "parsed_answer": "YES",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 425,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 229
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "target",
+      "question": "Q1",
+      "replicate": 80,
+      "semantic_id": "2768dff9429cd98f08d728b4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "30c54a1e9f1f57c789a9530438b1",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_image/predictions.jsonl"
+    },
+    "images": {
+      "images/be68afa5b36ac9d393a3d505fa35bbf8.png": "47070cbcd293c454bb94300e462782ad31f7b3a3b84fc08923153ee19d20cd2f",
+      "images/84d81d37258cb728a059f75245c8feff.png": "037972264d0788f4cffe91654595f25839a5460b7931b71c4b4f8ad245e6539c",
+      "images/52e44c21fd0385a23728dfb3b5b902d9.png": "e3cc88bf99e271f1045ef1869c46fbf2c80c4be5cb3b6ec9cbadf873f9a15d63",
+      "images/532828d8a133aea18c185e025ec2e9f9.png": "ec8a22d3e6e711621fe95da9b5caac0edf85f0a68c2fbdf8bdda3ad15ff9b68b",
+      "images/18c88fe7497f908d2c7896fcb9b912c0.png": "5acd146b4d1e4be9a8a9185ff0ee2278d3e6ca3f28cddc83426f179e9a25832a"
+    }
+  },
+  {
+    "case": 3,
+    "title": "文字查询：判断是否见过",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "99009b1cc07e5afffd89f679f96a",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "text": "The candidate is a purple dots triangle. Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q2",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+        "images/84d81d37258cb728a059f75245c8feff.png",
+        "images/52e44c21fd0385a23728dfb3b5b902d9.png",
+        "images/532828d8a133aea18c185e025ec2e9f9.png"
+      ],
+      "trial_id": "99009b1cc07e5afffd89f679f96a"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/84d81d37258cb728a059f75245c8feff.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/52e44c21fd0385a23728dfb3b5b902d9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/532828d8a133aea18c185e025ec2e9f9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "The candidate is a purple dots triangle. Did this complete object occur in the study set? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "99009b1cc07e5afffd89f679f96a",
+      "timestamp": "2026-10-23T07:48:35.599324+00:00",
+      "raw_response": "NO",
+      "parsed_answer": "NO",
+      "error": null,
+      "activation_file": "activations/99009b1cc07e5afffd89f679f96a.npz",
+      "input_tokens": 366,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 211
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "target",
+      "question": "Q2",
+      "replicate": 80,
+      "semantic_id": "2768dff9429cd98f08d728b4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "99009b1cc07e5afffd89f679f96a",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": false
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_core/predictions.jsonl"
+    },
+    "images": {
+      "images/be68afa5b36ac9d393a3d505fa35bbf8.png": "47070cbcd293c454bb94300e462782ad31f7b3a3b84fc08923153ee19d20cd2f",
+      "images/84d81d37258cb728a059f75245c8feff.png": "037972264d0788f4cffe91654595f25839a5460b7931b71c4b4f8ad245e6539c",
+      "images/52e44c21fd0385a23728dfb3b5b902d9.png": "e3cc88bf99e271f1045ef1869c46fbf2c80c4be5cb3b6ec9cbadf873f9a15d63",
+      "images/532828d8a133aea18c185e025ec2e9f9.png": "ec8a22d3e6e711621fe95da9b5caac0edf85f0a68c2fbdf8bdda3ad15ff9b68b"
+    }
+  },
+  {
+    "case": 4,
+    "title": "图片＋文字：判断是否见过",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "7af88ba43b480c3ff38983bc4561",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "image": "images/18c88fe7497f908d2c7896fcb9b912c0.png",
+          "type": "image"
+        },
+        {
+          "text": "The candidate is a purple dots triangle. Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q3",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+        "images/84d81d37258cb728a059f75245c8feff.png",
+        "images/52e44c21fd0385a23728dfb3b5b902d9.png",
+        "images/532828d8a133aea18c185e025ec2e9f9.png"
+      ],
+      "trial_id": "7af88ba43b480c3ff38983bc4561"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/84d81d37258cb728a059f75245c8feff.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/52e44c21fd0385a23728dfb3b5b902d9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/532828d8a133aea18c185e025ec2e9f9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/18c88fe7497f908d2c7896fcb9b912c0.png",
+            "type": "image",
+            "max_pixels": 802816
+          },
+          {
+            "text": "The candidate is a purple dots triangle. Did this complete object occur in the study set? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "7af88ba43b480c3ff38983bc4561",
+      "timestamp": "2026-10-25T11:49:03.031145+00:00",
+      "raw_response": "YES",
+      "parsed_answer": "YES",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 433,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 255
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "target",
+      "question": "Q3",
+      "replicate": 80,
+      "semantic_id": "2768dff9429cd98f08d728b4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "7af88ba43b480c3ff38983bc4561",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_formats/predictions.jsonl"
+    },
+    "images": {
+      "images/be68afa5b36ac9d393a3d505fa35bbf8.png": "47070cbcd293c454bb94300e462782ad31f7b3a3b84fc08923153ee19d20cd2f",
+      "images/84d81d37258cb728a059f75245c8feff.png": "037972264d0788f4cffe91654595f25839a5460b7931b71c4b4f8ad245e6539c",
+      "images/52e44c21fd0385a23728dfb3b5b902d9.png": "e3cc88bf99e271f1045ef1869c46fbf2c80c4be5cb3b6ec9cbadf873f9a15d63",
+      "images/532828d8a133aea18c185e025ec2e9f9.png": "ec8a22d3e6e711621fe95da9b5caac0edf85f0a68c2fbdf8bdda3ad15ff9b68b",
+      "images/18c88fe7497f908d2c7896fcb9b912c0.png": "5acd146b4d1e4be9a8a9185ff0ee2278d3e6ca3f28cddc83426f179e9a25832a"
+    }
+  },
+  {
+    "case": 5,
+    "title": "同一张图中的二选一",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "67e047b996584a5bd34995efce7a",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+          "type": "text"
+        },
+        {
+          "image": "images/ea1ba3c2e085ed644239e87c4c3ca85a.png",
+          "type": "image"
+        }
+      ],
+      "question": "Q4",
+      "response_kind": "choice2",
+      "split": "test",
+      "study_images": [
+        "images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+        "images/84d81d37258cb728a059f75245c8feff.png",
+        "images/52e44c21fd0385a23728dfb3b5b902d9.png",
+        "images/532828d8a133aea18c185e025ec2e9f9.png"
+      ],
+      "trial_id": "67e047b996584a5bd34995efce7a"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/84d81d37258cb728a059f75245c8feff.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/52e44c21fd0385a23728dfb3b5b902d9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/532828d8a133aea18c185e025ec2e9f9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+            "type": "text"
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/ea1ba3c2e085ed644239e87c4c3ca85a.png",
+            "type": "image",
+            "max_pixels": 802816
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "67e047b996584a5bd34995efce7a",
+      "timestamp": "2026-10-25T09:57:54.501012+00:00",
+      "raw_response": "B",
+      "parsed_answer": "B",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 458,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          14,
+          28
+        ]
+      ],
+      "latency_ms": 250
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "A",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "candidates": [
+        [
+          "purple",
+          "dots",
+          "triangle"
+        ],
+        [
+          "purple",
+          "stripes",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "target",
+      "question": "Q4",
+      "replicate": 80,
+      "semantic_id": "2768dff9429cd98f08d728b4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "67e047b996584a5bd34995efce7a",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": false
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_choices/predictions.jsonl"
+    },
+    "images": {
+      "images/be68afa5b36ac9d393a3d505fa35bbf8.png": "47070cbcd293c454bb94300e462782ad31f7b3a3b84fc08923153ee19d20cd2f",
+      "images/84d81d37258cb728a059f75245c8feff.png": "037972264d0788f4cffe91654595f25839a5460b7931b71c4b4f8ad245e6539c",
+      "images/52e44c21fd0385a23728dfb3b5b902d9.png": "e3cc88bf99e271f1045ef1869c46fbf2c80c4be5cb3b6ec9cbadf873f9a15d63",
+      "images/532828d8a133aea18c185e025ec2e9f9.png": "ec8a22d3e6e711621fe95da9b5caac0edf85f0a68c2fbdf8bdda3ad15ff9b68b",
+      "images/ea1ba3c2e085ed644239e87c4c3ca85a.png": "b55dfd6a20c88e400f565b7546650f491c1aedbe4e63de2d60ae44d3cc351589"
+    }
+  },
+  {
+    "case": 6,
+    "title": "两张候选图中的二选一",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "83feeb26124094ac10d01d7d4537",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+          "type": "text"
+        },
+        {
+          "text": "Candidate A",
+          "type": "text"
+        },
+        {
+          "image": "images/c7aee98799645eb6728bcfb715c4ae68.png",
+          "type": "image"
+        },
+        {
+          "text": "Candidate B",
+          "type": "text"
+        },
+        {
+          "image": "images/119a9fc7fb2957eae04b5999ee596933.png",
+          "type": "image"
+        }
+      ],
+      "question": "Q5",
+      "response_kind": "choice2",
+      "split": "test",
+      "study_images": [
+        "images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+        "images/84d81d37258cb728a059f75245c8feff.png",
+        "images/52e44c21fd0385a23728dfb3b5b902d9.png",
+        "images/532828d8a133aea18c185e025ec2e9f9.png"
+      ],
+      "trial_id": "83feeb26124094ac10d01d7d4537"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/84d81d37258cb728a059f75245c8feff.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/52e44c21fd0385a23728dfb3b5b902d9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/532828d8a133aea18c185e025ec2e9f9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+            "type": "text"
+          },
+          {
+            "text": "Candidate A",
+            "type": "text"
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/c7aee98799645eb6728bcfb715c4ae68.png",
+            "type": "image",
+            "max_pixels": 802816
+          },
+          {
+            "text": "Candidate B",
+            "type": "text"
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/119a9fc7fb2957eae04b5999ee596933.png",
+            "type": "image",
+            "max_pixels": 802816
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "83feeb26124094ac10d01d7d4537",
+      "timestamp": "2026-10-25T09:57:54.751518+00:00",
+      "raw_response": "A",
+      "parsed_answer": "A",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 494,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 259
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "A",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "candidates": [
+        [
+          "purple",
+          "dots",
+          "triangle"
+        ],
+        [
+          "purple",
+          "stripes",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "target",
+      "question": "Q5",
+      "replicate": 80,
+      "semantic_id": "2768dff9429cd98f08d728b4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "83feeb26124094ac10d01d7d4537",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_choices/predictions.jsonl"
+    },
+    "images": {
+      "images/be68afa5b36ac9d393a3d505fa35bbf8.png": "47070cbcd293c454bb94300e462782ad31f7b3a3b84fc08923153ee19d20cd2f",
+      "images/84d81d37258cb728a059f75245c8feff.png": "037972264d0788f4cffe91654595f25839a5460b7931b71c4b4f8ad245e6539c",
+      "images/52e44c21fd0385a23728dfb3b5b902d9.png": "e3cc88bf99e271f1045ef1869c46fbf2c80c4be5cb3b6ec9cbadf873f9a15d63",
+      "images/532828d8a133aea18c185e025ec2e9f9.png": "ec8a22d3e6e711621fe95da9b5caac0edf85f0a68c2fbdf8bdda3ad15ff9b68b",
+      "images/c7aee98799645eb6728bcfb715c4ae68.png": "de91f3cbcbb3e2d27392434d2afd373075f1272965741591af0b4c6ddb7328f4",
+      "images/119a9fc7fb2957eae04b5999ee596933.png": "f4edf6577b712ec635e8c4ffaa2dbf538e211493a1d806c3ed790f31f8d34b6e"
+    }
+  },
+  {
+    "case": 7,
+    "title": "四选一",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "7974e7bd191ce8e89df4a7f2ca70",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+          "type": "text"
+        },
+        {
+          "image": "images/71055cac40c06d2c87c2a2a6d0cd1bb7.png",
+          "type": "image"
+        }
+      ],
+      "question": "Q6",
+      "response_kind": "choice4",
+      "split": "test",
+      "study_images": [
+        "images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+        "images/84d81d37258cb728a059f75245c8feff.png",
+        "images/52e44c21fd0385a23728dfb3b5b902d9.png",
+        "images/532828d8a133aea18c185e025ec2e9f9.png"
+      ],
+      "trial_id": "7974e7bd191ce8e89df4a7f2ca70"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/84d81d37258cb728a059f75245c8feff.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/52e44c21fd0385a23728dfb3b5b902d9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/532828d8a133aea18c185e025ec2e9f9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+            "type": "text"
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/71055cac40c06d2c87c2a2a6d0cd1bb7.png",
+            "type": "image",
+            "max_pixels": 802816
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "7974e7bd191ce8e89df4a7f2ca70",
+      "timestamp": "2026-10-25T11:49:03.287002+00:00",
+      "raw_response": "B",
+      "parsed_answer": "B",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 556,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          28,
+          28
+        ]
+      ],
+      "latency_ms": 282
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "A",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "candidates": [
+        [
+          "purple",
+          "dots",
+          "triangle"
+        ],
+        [
+          "purple",
+          "stripes",
+          "triangle"
+        ],
+        [
+          "red",
+          "solid",
+          "circle"
+        ],
+        [
+          "red",
+          "solid",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "target",
+      "question": "Q6",
+      "replicate": 80,
+      "semantic_id": "2768dff9429cd98f08d728b4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "7974e7bd191ce8e89df4a7f2ca70",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": false
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_formats/predictions.jsonl"
+    },
+    "images": {
+      "images/be68afa5b36ac9d393a3d505fa35bbf8.png": "47070cbcd293c454bb94300e462782ad31f7b3a3b84fc08923153ee19d20cd2f",
+      "images/84d81d37258cb728a059f75245c8feff.png": "037972264d0788f4cffe91654595f25839a5460b7931b71c4b4f8ad245e6539c",
+      "images/52e44c21fd0385a23728dfb3b5b902d9.png": "e3cc88bf99e271f1045ef1869c46fbf2c80c4be5cb3b6ec9cbadf873f9a15d63",
+      "images/532828d8a133aea18c185e025ec2e9f9.png": "ec8a22d3e6e711621fe95da9b5caac0edf85f0a68c2fbdf8bdda3ad15ff9b68b",
+      "images/71055cac40c06d2c87c2a2a6d0cd1bb7.png": "d1d94983da7eb0bb51d8d578286eb8faa8229778e2a734302bcff2c398448164"
+    }
+  },
+  {
+    "case": 8,
+    "title": "给颜色和形状，回忆纹理",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "c1441490c1e6574f934d6ce8e544",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "text": "What texture did the purple triangle have in the study set? Output only SOLID, STRIPES, DOTS or GRID.",
+          "type": "text"
+        }
+      ],
+      "question": "Q7",
+      "response_kind": "recall",
+      "split": "test",
+      "study_images": [
+        "images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+        "images/84d81d37258cb728a059f75245c8feff.png",
+        "images/52e44c21fd0385a23728dfb3b5b902d9.png",
+        "images/532828d8a133aea18c185e025ec2e9f9.png"
+      ],
+      "trial_id": "c1441490c1e6574f934d6ce8e544"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/be68afa5b36ac9d393a3d505fa35bbf8.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/84d81d37258cb728a059f75245c8feff.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/52e44c21fd0385a23728dfb3b5b902d9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/532828d8a133aea18c185e025ec2e9f9.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "What texture did the purple triangle have in the study set? Output only SOLID, STRIPES, DOTS or GRID.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "c1441490c1e6574f934d6ce8e544",
+      "timestamp": "2026-10-25T11:49:03.569644+00:00",
+      "raw_response": "DOTS",
+      "parsed_answer": "DOTS",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 368,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 257
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "DOTS",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "cue": [
+        "purple",
+        "triangle"
+      ],
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "target",
+      "question": "Q7",
+      "replicate": 80,
+      "semantic_id": "2768dff9429cd98f08d728b4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "c1441490c1e6574f934d6ce8e544",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_formats/predictions.jsonl"
+    },
+    "images": {
+      "images/be68afa5b36ac9d393a3d505fa35bbf8.png": "47070cbcd293c454bb94300e462782ad31f7b3a3b84fc08923153ee19d20cd2f",
+      "images/84d81d37258cb728a059f75245c8feff.png": "037972264d0788f4cffe91654595f25839a5460b7931b71c4b4f8ad245e6539c",
+      "images/52e44c21fd0385a23728dfb3b5b902d9.png": "e3cc88bf99e271f1045ef1869c46fbf2c80c4be5cb3b6ec9cbadf873f9a15d63",
+      "images/532828d8a133aea18c185e025ec2e9f9.png": "ec8a22d3e6e711621fe95da9b5caac0edf85f0a68c2fbdf8bdda3ad15ff9b68b"
+    }
+  },
+  {
+    "case": 9,
+    "title": "严格负例：图片查询：判断是否见过",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "be3c5c28bbf84d857b635b546358",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "image": "images/18c88fe7497f908d2c7896fcb9b912c0.png",
+          "type": "image"
+        },
+        {
+          "text": "Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q1",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/ec02b1dd0906cee34aaabf2de2767229.png",
+        "images/b56a156c3bb6f61228132c52b84dfd66.png",
+        "images/e725e0ed9e1213946e99743570da1446.png",
+        "images/1fa9cc0e180fa9fa8b64bc9951f57a6f.png"
+      ],
+      "trial_id": "be3c5c28bbf84d857b635b546358"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/ec02b1dd0906cee34aaabf2de2767229.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/b56a156c3bb6f61228132c52b84dfd66.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/e725e0ed9e1213946e99743570da1446.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/1fa9cc0e180fa9fa8b64bc9951f57a6f.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/18c88fe7497f908d2c7896fcb9b912c0.png",
+            "type": "image",
+            "max_pixels": 802816
+          },
+          {
+            "text": "Did this complete object occur in the study set? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "be3c5c28bbf84d857b635b546358",
+      "timestamp": "2026-10-25T09:16:56.910484+00:00",
+      "raw_response": "NO",
+      "parsed_answer": "NO",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 425,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 225
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "NO",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "pairwise_complete",
+      "question": "Q1",
+      "replicate": 80,
+      "semantic_id": "7fc15c431bcb7f55457efda4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "purple",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "be3c5c28bbf84d857b635b546358",
+      "world": 1
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_image/predictions.jsonl"
+    },
+    "images": {
+      "images/ec02b1dd0906cee34aaabf2de2767229.png": "ed82b03cda834458845e4f97e62a8c6d125b614e78b5dc67188b35eadc1e65a6",
+      "images/b56a156c3bb6f61228132c52b84dfd66.png": "c87aeec6692a03c5d4f2ff1da5fce1c630f4d4e8a7e6addded9967f38afe0d75",
+      "images/e725e0ed9e1213946e99743570da1446.png": "bb6479d2fcf6723b2f10b6ef5e71ed34cd7033ebff756f599ee9eacaa0f867fb",
+      "images/1fa9cc0e180fa9fa8b64bc9951f57a6f.png": "3fb35309dbf283139d966a4ea1ff8212765bb25f5bec7878af3fd84ed53ae050",
+      "images/18c88fe7497f908d2c7896fcb9b912c0.png": "5acd146b4d1e4be9a8a9185ff0ee2278d3e6ca3f28cddc83426f179e9a25832a"
+    }
+  },
+  {
+    "case": 10,
+    "title": "严格负例：文字查询：判断是否见过",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "fb59d24cc6c0e798d191d7a20e4e",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "text": "The candidate is a purple dots triangle. Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q2",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/ec02b1dd0906cee34aaabf2de2767229.png",
+        "images/b56a156c3bb6f61228132c52b84dfd66.png",
+        "images/e725e0ed9e1213946e99743570da1446.png",
+        "images/1fa9cc0e180fa9fa8b64bc9951f57a6f.png"
+      ],
+      "trial_id": "fb59d24cc6c0e798d191d7a20e4e"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/ec02b1dd0906cee34aaabf2de2767229.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/b56a156c3bb6f61228132c52b84dfd66.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/e725e0ed9e1213946e99743570da1446.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/1fa9cc0e180fa9fa8b64bc9951f57a6f.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "The candidate is a purple dots triangle. Did this complete object occur in the study set? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "fb59d24cc6c0e798d191d7a20e4e",
+      "timestamp": "2026-10-23T07:48:35.810709+00:00",
+      "raw_response": "NO",
+      "parsed_answer": "NO",
+      "error": null,
+      "activation_file": "activations/fb59d24cc6c0e798d191d7a20e4e.npz",
+      "input_tokens": 366,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 210
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "NO",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "stripes",
+          "dots"
+        ],
+        [
+          "pentagon",
+          "triangle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "1991c13a0558c7ca918563cc",
+      "probe": [
+        "purple",
+        "dots",
+        "triangle"
+      ],
+      "probe_type": "pairwise_complete",
+      "question": "Q2",
+      "replicate": 80,
+      "semantic_id": "7fc15c431bcb7f55457efda4",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "purple",
+            "dots",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "dots",
+            "triangle"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "purple",
+            "stripes",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "fb59d24cc6c0e798d191d7a20e4e",
+      "world": 1
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_core/predictions.jsonl"
+    },
+    "images": {
+      "images/ec02b1dd0906cee34aaabf2de2767229.png": "ed82b03cda834458845e4f97e62a8c6d125b614e78b5dc67188b35eadc1e65a6",
+      "images/b56a156c3bb6f61228132c52b84dfd66.png": "c87aeec6692a03c5d4f2ff1da5fce1c630f4d4e8a7e6addded9967f38afe0d75",
+      "images/e725e0ed9e1213946e99743570da1446.png": "bb6479d2fcf6723b2f10b6ef5e71ed34cd7033ebff756f599ee9eacaa0f867fb",
+      "images/1fa9cc0e180fa9fa8b64bc9951f57a6f.png": "3fb35309dbf283139d966a4ea1ff8212765bb25f5bec7878af3fd84ed53ae050"
+    }
+  },
+  {
+    "case": 11,
+    "title": "关系判断：左右",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "bc0b710794d64cd67ef15de34e8e",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L4",
+      "query": [
+        {
+          "text": "In the study image, was the yellow solid square to the left of the red grid star? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q8",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/1d75154364578329188af3ea730f642a.png"
+      ],
+      "trial_id": "bc0b710794d64cd67ef15de34e8e"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/1d75154364578329188af3ea730f642a.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "In the study image, was the yellow solid square to the left of the red grid star? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "bc0b710794d64cd67ef15de34e8e",
+      "timestamp": "2026-10-26T03:04:10.142913+00:00",
+      "raw_response": "YES",
+      "parsed_answer": "YES",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 188,
+      "image_grid_thw": [
+        [
+          1,
+          14,
+          28
+        ]
+      ],
+      "latency_ms": 136
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "cluster_id": "seed20261022-g00080",
+      "layout": null,
+      "level": "L4",
+      "mode": "2d",
+      "objects_per_image": 2,
+      "pair_id": "eebf3db879b9a8b490c241c9",
+      "probe": [
+        [
+          "yellow",
+          "solid",
+          "square"
+        ],
+        [
+          "red",
+          "grid",
+          "star"
+        ]
+      ],
+      "probe_type": "relation",
+      "question": "Q8",
+      "relation": "left",
+      "replicate": 80,
+      "semantic_id": "36717931c6f405cb1d984538",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "yellow",
+            "solid",
+            "square"
+          ],
+          [
+            "red",
+            "grid",
+            "star"
+          ]
+        ]
+      ],
+      "task": "left",
+      "total_objects": 2,
+      "trial_id": "bc0b710794d64cd67ef15de34e8e",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_extensions/predictions.jsonl"
+    },
+    "images": {
+      "images/1d75154364578329188af3ea730f642a.png": "f5cc6a0e203b18f86b617bc163ff272777ba8ce77ad1f694c272db8fbe79204f"
+    }
+  },
+  {
+    "case": 12,
+    "title": "关系判断：上下",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "131f0a8531cd231b9f29c40bcda0",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L4",
+      "query": [
+        {
+          "text": "In the study image, was the yellow solid square above the red grid star? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q8",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/ed1ef0981e078c6bd27fb48acd670076.png"
+      ],
+      "trial_id": "131f0a8531cd231b9f29c40bcda0"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/ed1ef0981e078c6bd27fb48acd670076.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "In the study image, was the yellow solid square above the red grid star? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "131f0a8531cd231b9f29c40bcda0",
+      "timestamp": "2026-10-26T03:04:10.415404+00:00",
+      "raw_response": "YES",
+      "parsed_answer": "YES",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 185,
+      "image_grid_thw": [
+        [
+          1,
+          28,
+          14
+        ]
+      ],
+      "latency_ms": 133
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "cluster_id": "seed20261022-g00080",
+      "layout": "above",
+      "level": "L4",
+      "mode": "2d",
+      "objects_per_image": 2,
+      "pair_id": "41b11594e5e62ca1f9a5eb36",
+      "probe": [
+        [
+          "yellow",
+          "solid",
+          "square"
+        ],
+        [
+          "red",
+          "grid",
+          "star"
+        ]
+      ],
+      "probe_type": "relation",
+      "question": "Q8",
+      "relation": "above",
+      "replicate": 80,
+      "semantic_id": "55392040766dd19085002801",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "yellow",
+            "solid",
+            "square"
+          ],
+          [
+            "red",
+            "grid",
+            "star"
+          ]
+        ]
+      ],
+      "task": "above",
+      "total_objects": 2,
+      "trial_id": "131f0a8531cd231b9f29c40bcda0",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_extensions/predictions.jsonl"
+    },
+    "images": {
+      "images/ed1ef0981e078c6bd27fb48acd670076.png": "5206e53eb218b46682bb5bd27d1e2726b61dc47cee28527ed38bd6558a3f5132"
+    }
+  },
+  {
+    "case": 13,
+    "title": "关系判断：深度前后",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "0da04c283236dc44275a92e9d207",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L4",
+      "query": [
+        {
+          "text": "In the study image, was the yellow solid square in front of (closer to the camera than) the red grid star? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q8",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/0582dff9d38568f467c9dbef54f7ceb4.png"
+      ],
+      "trial_id": "0da04c283236dc44275a92e9d207"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/0582dff9d38568f467c9dbef54f7ceb4.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "In the study image, was the yellow solid square in front of (closer to the camera than) the red grid star? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "0da04c283236dc44275a92e9d207",
+      "timestamp": "2026-10-26T03:04:10.683385+00:00",
+      "raw_response": "YES",
+      "parsed_answer": "YES",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 161,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 111
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "cluster_id": "seed20261022-g00080",
+      "layout": "front",
+      "level": "L4",
+      "mode": "3d_fixed",
+      "objects_per_image": 2,
+      "pair_id": "953982da551812354e9e57b4",
+      "probe": [
+        [
+          "yellow",
+          "solid",
+          "square"
+        ],
+        [
+          "red",
+          "grid",
+          "star"
+        ]
+      ],
+      "probe_type": "relation",
+      "question": "Q8",
+      "relation": "front",
+      "replicate": 80,
+      "semantic_id": "15c9316558658f6452f71f09",
+      "split": "test",
+      "study_mode": "3d_fixed",
+      "study_scenes": [
+        [
+          [
+            "yellow",
+            "solid",
+            "square"
+          ],
+          [
+            "red",
+            "grid",
+            "star"
+          ]
+        ]
+      ],
+      "task": "front",
+      "total_objects": 2,
+      "trial_id": "0da04c283236dc44275a92e9d207",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_extensions/predictions.jsonl"
+    },
+    "images": {
+      "images/0582dff9d38568f467c9dbef54f7ceb4.png": "ae196fb18a9b62a1621c1b142436693fb13252a12df1043528393df06bc1e43b"
+    }
+  },
+  {
+    "case": 14,
+    "title": "关系判断：同图共现",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "5156e7376d67230f3c454981f143",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L4",
+      "query": [
+        {
+          "text": "Did the yellow solid square and the red grid star occur together in the SAME study image? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q8",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/1d75154364578329188af3ea730f642a.png",
+        "images/a8c5ac55bd974aa714b4da1fed8d2aa5.png"
+      ],
+      "trial_id": "5156e7376d67230f3c454981f143"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/1d75154364578329188af3ea730f642a.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/a8c5ac55bd974aa714b4da1fed8d2aa5.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "Did the yellow solid square and the red grid star occur together in the SAME study image? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "5156e7376d67230f3c454981f143",
+      "timestamp": "2026-10-26T03:04:10.908541+00:00",
+      "raw_response": "YES",
+      "parsed_answer": "YES",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 293,
+      "image_grid_thw": [
+        [
+          1,
+          14,
+          28
+        ],
+        [
+          1,
+          14,
+          28
+        ]
+      ],
+      "latency_ms": 181
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "cluster_id": "seed20261022-g00080",
+      "layout": null,
+      "level": "L4",
+      "mode": "2d",
+      "objects_per_image": 2,
+      "pair_id": "ffbf43714237e7994332f1c5",
+      "probe": [
+        [
+          "yellow",
+          "solid",
+          "square"
+        ],
+        [
+          "red",
+          "grid",
+          "star"
+        ]
+      ],
+      "probe_type": "relation",
+      "question": "Q8",
+      "relation": "cooccur",
+      "replicate": 80,
+      "semantic_id": "877a3d08dec4c6879b530e7c",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "yellow",
+            "solid",
+            "square"
+          ],
+          [
+            "red",
+            "grid",
+            "star"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "dots",
+            "hexagon"
+          ],
+          [
+            "blue",
+            "grid",
+            "triangle"
+          ]
+        ]
+      ],
+      "task": "cooccur",
+      "total_objects": 4,
+      "trial_id": "5156e7376d67230f3c454981f143",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_extensions/predictions.jsonl"
+    },
+    "images": {
+      "images/1d75154364578329188af3ea730f642a.png": "f5cc6a0e203b18f86b617bc163ff272777ba8ce77ad1f694c272db8fbe79204f",
+      "images/a8c5ac55bd974aa714b4da1fed8d2aa5.png": "1078991f7e87e3d6cff474a5141e1b8c528d559f9390a97432a1a0b876cae3d3"
+    }
+  },
+  {
+    "case": 15,
+    "title": "多物体输入：8 个物体、每图 4 个",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "3d8e98cd5701dbae886a4db35f4f",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L3",
+      "query": [
+        {
+          "image": "images/94eef66c698ee78500254111a1e6794b.png",
+          "type": "image"
+        },
+        {
+          "text": "Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q1",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/9350853642ae6fa241b972192b1f060a.png",
+        "images/7db51dfd981e8f8f98fec47c4e4a4a23.png"
+      ],
+      "trial_id": "3d8e98cd5701dbae886a4db35f4f"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/9350853642ae6fa241b972192b1f060a.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/7db51dfd981e8f8f98fec47c4e4a4a23.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/94eef66c698ee78500254111a1e6794b.png",
+            "type": "image",
+            "max_pixels": 802816
+          },
+          {
+            "text": "Did this complete object occur in the study set? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "3d8e98cd5701dbae886a4db35f4f",
+      "timestamp": "2026-10-25T09:16:59.582039+00:00",
+      "raw_response": "YES",
+      "parsed_answer": "YES",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 547,
+      "image_grid_thw": [
+        [
+          1,
+          28,
+          28
+        ],
+        [
+          1,
+          28,
+          28
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 254
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "banks": [
+        [
+          "purple",
+          "blue"
+        ],
+        [
+          "solid",
+          "grid"
+        ],
+        [
+          "pentagon",
+          "circle"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L3",
+      "mode": "2d",
+      "objects_per_image": 4,
+      "pair_id": "c4fef2f5c59d2ff1b26c8a84",
+      "probe": [
+        "purple",
+        "grid",
+        "circle"
+      ],
+      "probe_type": "target",
+      "question": "Q1",
+      "replicate": 80,
+      "semantic_id": "76938cdaf030174997caef73",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "red",
+            "dots",
+            "triangle"
+          ],
+          [
+            "blue",
+            "solid",
+            "circle"
+          ],
+          [
+            "purple",
+            "grid",
+            "circle"
+          ],
+          [
+            "blue",
+            "grid",
+            "pentagon"
+          ]
+        ],
+        [
+          [
+            "orange",
+            "dots",
+            "triangle"
+          ],
+          [
+            "orange",
+            "stripes",
+            "square"
+          ],
+          [
+            "purple",
+            "solid",
+            "pentagon"
+          ],
+          [
+            "orange",
+            "dots",
+            "star"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 8,
+      "trial_id": "3d8e98cd5701dbae886a4db35f4f",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": true
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_image/predictions.jsonl"
+    },
+    "images": {
+      "images/9350853642ae6fa241b972192b1f060a.png": "f3970ce9c6ddd49481b21721f9f3d7aa25ec41a0073ac886ad0b40b5490801d3",
+      "images/7db51dfd981e8f8f98fec47c4e4a4a23.png": "b7670c31bbf81fc7af9017e4daa6bf09a6becd6607084bd185ed823046170bf6",
+      "images/94eef66c698ee78500254111a1e6794b.png": "a78938dfea4ad7773f5499c83eaef028f00f497b6d6f102db40c086b71177e10"
+    }
+  },
+  {
+    "case": 16,
+    "title": "三维输入：查询图部分遮挡",
+    "selection": "first matching test trial in dataset order",
+    "trial_id": "9992fb76869cb16f03411130278e",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L5",
+      "query": [
+        {
+          "image": "images/f63e0a0ce298523c80b8c4c91929f40c.png",
+          "type": "image"
+        },
+        {
+          "text": "Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q1",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/6394ae5e6ed186944f81f19a07b177b1.png",
+        "images/b58d48602f611f944916db8a0b552e1e.png",
+        "images/64da6528c98e4e7efc2590cb44acb6f7.png",
+        "images/7c49cfbc3207661d5341fcd5b5ccd4bc.png"
+      ],
+      "trial_id": "9992fb76869cb16f03411130278e"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/6394ae5e6ed186944f81f19a07b177b1.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/b58d48602f611f944916db8a0b552e1e.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/64da6528c98e4e7efc2590cb44acb6f7.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/7c49cfbc3207661d5341fcd5b5ccd4bc.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/f63e0a0ce298523c80b8c4c91929f40c.png",
+            "type": "image",
+            "max_pixels": 802816
+          },
+          {
+            "text": "Did this complete object occur in the study set? Output only YES or NO.",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "9992fb76869cb16f03411130278e",
+      "timestamp": "2026-10-26T03:04:20.622791+00:00",
+      "raw_response": "NO",
+      "parsed_answer": "NO",
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 425,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 223
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "YES",
+      "banks": [
+        [
+          "green",
+          "red"
+        ],
+        [
+          "grid",
+          "solid"
+        ],
+        [
+          "square",
+          "star"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00080",
+      "level": "L5",
+      "mode": "3d_occluded",
+      "objects_per_image": 1,
+      "pair_id": "325a81161f39e33193778e82",
+      "probe": [
+        "green",
+        "solid",
+        "star"
+      ],
+      "probe_type": "target",
+      "question": "Q1",
+      "replicate": 80,
+      "semantic_id": "afdf72d2c89bef9766ae446c",
+      "split": "test",
+      "study_mode": "3d_fixed",
+      "study_scenes": [
+        [
+          [
+            "red",
+            "solid",
+            "square"
+          ]
+        ],
+        [
+          [
+            "green",
+            "solid",
+            "star"
+          ]
+        ],
+        [
+          [
+            "green",
+            "grid",
+            "square"
+          ]
+        ],
+        [
+          [
+            "red",
+            "grid",
+            "star"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "9992fb76869cb16f03411130278e",
+      "world": 0
+    },
+    "score": {
+      "valid": true,
+      "correct": false
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_extensions/predictions.jsonl"
+    },
+    "images": {
+      "images/6394ae5e6ed186944f81f19a07b177b1.png": "535e4e661140570081a1dabc1a1d311e69f6f30f82a915c422b7f6aeaa8edd67",
+      "images/b58d48602f611f944916db8a0b552e1e.png": "620bd30877c5062b9cec552147882b44f37eacc2c6195034210f3f47a6880493",
+      "images/64da6528c98e4e7efc2590cb44acb6f7.png": "e564059c8e51ddfd7f759d9b29f5a7ce3f5a56339bc51e5da96413e8ff0a8cc2",
+      "images/7c49cfbc3207661d5341fcd5b5ccd4bc.png": "cd3f0bdead154c5bf0f2e5c8dbf50f2c4a22e2bd3e458875870ba1758639d8f7",
+      "images/f63e0a0ce298523c80b8c4c91929f40c.png": "1f9a6fa1ad0504bd5f18960915acf943ee3b33dba4cafdca5f1f72f2fd412430"
+    }
+  },
+  {
+    "case": 17,
+    "title": "无效回答诊断：二选一却输出范围外字母",
+    "selection": "first invalid choice trial in test order",
+    "trial_id": "481db1a0877c5d3e882611f9c6c1",
+    "input_record": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L5",
+      "query": [
+        {
+          "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+          "type": "text"
+        },
+        {
+          "text": "Candidate A",
+          "type": "text"
+        },
+        {
+          "image": "images/2fd2b83c6207018dd279318d35daa570.png",
+          "type": "image"
+        },
+        {
+          "text": "Candidate B",
+          "type": "text"
+        },
+        {
+          "image": "images/942356cf3478e98eff609dde4818bfb1.png",
+          "type": "image"
+        }
+      ],
+      "question": "Q5",
+      "response_kind": "choice2",
+      "split": "test",
+      "study_images": [
+        "images/fafc811737134423e7ab6b581e843df0.png",
+        "images/d2046931a22b230ca4d20f323fd684e5.png",
+        "images/4ba8497e92b6930281bc297086d7fec7.png",
+        "images/eb4851b0ccca806c90d14ec15202b0bc.png"
+      ],
+      "trial_id": "481db1a0877c5d3e882611f9c6c1"
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "text",
+            "text": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. "
+          },
+          {
+            "type": "text",
+            "text": "Study image 1:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/fafc811737134423e7ab6b581e843df0.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 2:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/d2046931a22b230ca4d20f323fd684e5.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 3:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/4ba8497e92b6930281bc297086d7fec7.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "Study image 4:"
+          },
+          {
+            "type": "image",
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/eb4851b0ccca806c90d14ec15202b0bc.png",
+            "max_pixels": 802816
+          },
+          {
+            "type": "text",
+            "text": "End of study. Answer the following query."
+          },
+          {
+            "text": "Which ONE candidate occurred as a complete study object? Output only its letter.",
+            "type": "text"
+          },
+          {
+            "text": "Candidate A",
+            "type": "text"
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/2fd2b83c6207018dd279318d35daa570.png",
+            "type": "image",
+            "max_pixels": 802816
+          },
+          {
+            "text": "Candidate B",
+            "type": "text"
+          },
+          {
+            "image": "/ceph/home/shizhongyu/class_project/data/bindmem_v2/images/942356cf3478e98eff609dde4818bfb1.png",
+            "type": "image",
+            "max_pixels": 802816
+          }
+        ]
+      }
+    ],
+    "raw_prediction": {
+      "trial_id": "481db1a0877c5d3e882611f9c6c1",
+      "timestamp": "2026-10-26T03:04:35.063760+00:00",
+      "raw_response": "D",
+      "parsed_answer": null,
+      "error": null,
+      "activation_file": null,
+      "input_tokens": 494,
+      "image_grid_thw": [
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ],
+        [
+          1,
+          16,
+          16
+        ]
+      ],
+      "latency_ms": 233
+    },
+    "private_label_not_sent_to_model": {
+      "answer": "B",
+      "banks": [
+        [
+          "yellow",
+          "green"
+        ],
+        [
+          "stripes",
+          "grid"
+        ],
+        [
+          "star",
+          "hexagon"
+        ]
+      ],
+      "candidates": [
+        [
+          "yellow",
+          "stripes",
+          "hexagon"
+        ],
+        [
+          "green",
+          "stripes",
+          "hexagon"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00081",
+      "level": "L5",
+      "mode": "3d_occluded",
+      "objects_per_image": 1,
+      "pair_id": "fcdaaa1c53c22d24478ed3a0",
+      "probe": [
+        "green",
+        "stripes",
+        "hexagon"
+      ],
+      "probe_type": "target",
+      "question": "Q5",
+      "replicate": 81,
+      "semantic_id": "338f56ed6d2552da2b1b265f",
+      "split": "test",
+      "study_mode": "3d_fixed",
+      "study_scenes": [
+        [
+          [
+            "green",
+            "grid",
+            "star"
+          ]
+        ],
+        [
+          [
+            "yellow",
+            "stripes",
+            "star"
+          ]
+        ],
+        [
+          [
+            "yellow",
+            "grid",
+            "hexagon"
+          ]
+        ],
+        [
+          [
+            "green",
+            "stripes",
+            "hexagon"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "481db1a0877c5d3e882611f9c6c1",
+      "world": 0
+    },
+    "score": {
+      "valid": false,
+      "correct": false
+    },
+    "source": {
+      "input": "inputs/test.jsonl",
+      "label": "labels/test.jsonl",
+      "prediction": "runs/bindmem_v2/qwen8b_extensions/predictions.jsonl"
+    },
+    "images": {
+      "images/fafc811737134423e7ab6b581e843df0.png": "79b1e6b2053d6c68cd1de51831f8ad86a37c1c6b2b39dcbb94750efe02478fd4",
+      "images/d2046931a22b230ca4d20f323fd684e5.png": "f9a488f1244f528095a48a7b5fab05c3fb0f9162716598a6a683926a03173335",
+      "images/4ba8497e92b6930281bc297086d7fec7.png": "bb7f21b4dd51ec3e8a4789c2eeb81ec952169d62cec8c29afd841d7b3262177d",
+      "images/eb4851b0ccca806c90d14ec15202b0bc.png": "5b97fd73a1be2c7e4f8caa50a5e309c0d1a5c7f5342c0255a8fbc6afb343838d",
+      "images/2fd2b83c6207018dd279318d35daa570.png": "85b8ef2dbeee053c2b4bf4595dd28913c92a240f54510caf816e8daee4e0ce39",
+      "images/942356cf3478e98eff609dde4818bfb1.png": "3e16a3547c3d4a830dc7266cbd13ecd0de7723545486d45d5b75202ea4c91898"
+    }
+  }
+]

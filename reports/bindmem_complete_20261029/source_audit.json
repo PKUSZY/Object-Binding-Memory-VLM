@@ -1,0 +1,150 @@
+{
+  "generated_at": "2026-10-29T10:54:10.818947+00:00",
+  "report_date": "2026-10-29",
+  "verified_test_rows": {
+    "qwen_v2": 69840,
+    "qwen_gradient": 5760,
+    "llava_core": 1680,
+    "llava_gradient": 3840
+  },
+  "qwen_v2_invalid": 436,
+  "paired_core": 1680,
+  "paired_gradient": 3840,
+  "comparison_test_clusters": 240,
+  "figure_metric_rows": 52,
+  "ci_policy": "cluster bootstrap; 1000 replicates; paired contrasts; source objects retained; no multiplicity adjustment",
+  "sources": {
+    "runs/bindmem_v2/qwen8b_core/manifest.json": {
+      "sha256": "21dd7c769c29921ae925e58b414bfed38cb6b2e88f04c1750a7a748bf3a91c95",
+      "bytes": 2170
+    },
+    "runs/bindmem_v2/qwen8b_core/predictions.jsonl": {
+      "sha256": "612237d361351f0a369bbce80c7a9275df3fab90641acc47eaded874efd7a90c",
+      "bytes": 2202360
+    },
+    "runs/bindmem_v2/qwen8b_image/manifest.json": {
+      "sha256": "dcdbc6e96ae65d72612b8037b717c840c33ee3f6025d2735a649b544496209de",
+      "bytes": 2150
+    },
+    "runs/bindmem_v2/qwen8b_image/predictions.jsonl": {
+      "sha256": "f2fef357558fbb37f068b6dc9514ecb83f07541598f342c47cff4d6a13df99c2",
+      "bytes": 1513747
+    },
+    "runs/bindmem_v2/qwen8b_choices/manifest.json": {
+      "sha256": "245f09480243d4a5a0a3ec55d002da4767324a0d4140a52cff660058f6611a68",
+      "bytes": 2160
+    },
+    "runs/bindmem_v2/qwen8b_choices/predictions.jsonl": {
+      "sha256": "becb2a0160ca56899edb11cf1cc0daefd8d2a15e687fdb892f177138e81bb366",
+      "bytes": 3063967
+    },
+    "runs/bindmem_v2/qwen8b_formats/manifest.json": {
+      "sha256": "51cdb45e7433cf241fb0179909e90f5955b7eb0ffa0d2854b9d1bf0a5781492b",
+      "bytes": 2170
+    },
+    "runs/bindmem_v2/qwen8b_formats/predictions.jsonl": {
+      "sha256": "92385758b6c426c26bc55c884f37f68a0d394768a5a1fd191bb23c71149d8e83",
+      "bytes": 4514737
+    },
+    "runs/bindmem_v2/qwen8b_basic/manifest.json": {
+      "sha256": "979ff925a0d0797640a2e3f8216b18075df412c227e8f4ad0c212df9963dc688",
+      "bytes": 2200
+    },
+    "runs/bindmem_v2/qwen8b_basic/predictions.jsonl": {
+      "sha256": "a1063104ecee6a543bcb475104d738d0f5e36895dc4eed564ee1dfc66bac28d4",
+      "bytes": 10286063
+    },
+    "runs/bindmem_v2/qwen8b_extensions/manifest.json": {
+      "sha256": "67e20e38f0aeefacfe593af618d0a4a4bf458211db3e83a13b6c9e423817a11a",
+      "bytes": 2220
+    },
+    "runs/bindmem_v2/qwen8b_extensions/predictions.jsonl": {
+      "sha256": "a7fc1f00b6f0cc746104343741824367791d3de6f2784f1f7be0f8b986f59052",
+      "bytes": 6085391
+    },
+    "runs/bindmem_priority/llava7b_core/manifest.json": {
+      "sha256": "40ba5416437a523210641c83bbbfe774d1128636b370d86b6d4a22fcef9d3573",
+      "bytes": 4506
+    },
+    "runs/bindmem_priority/llava7b_core/predictions.jsonl": {
+      "sha256": "badc7b3f0ed82d68d2975024fb81db9e19580c9e3dd6908be8bfdfb7bdbde8a0",
+      "bytes": 551317
+    },
+    "runs/bindmem_priority/llava7b_core/scored/test/summary.json": {
+      "sha256": "a5b7963b576de497648049467a0277cfe589153c3c96d2a2d53c7d7433c9da2b",
+      "bytes": 6521
+    },
+    "runs/bindmem_priority/llava7b_gradient/manifest.json": {
+      "sha256": "d34f80ed9df4fd9e0fe40ec7382c5b5dc2bc6e4ac630db8a91dd0f2f4d83a6b6",
+      "bytes": 4213
+    },
+    "runs/bindmem_priority/llava7b_gradient/predictions.jsonl": {
+      "sha256": "9e27097aa3cf62393fc3443f142a80836d56551fd53ba40d8065ca0dcc80c01f",
+      "bytes": 1178874
+    },
+    "runs/bindmem_priority/llava7b_gradient/scored/test/summary.json": {
+      "sha256": "52086a69da8efad8224a07ba6deda8b9d731ba6c37990b1410f191642661cf22",
+      "bytes": 13486
+    },
+    "runs/bindmem_gradient_n6/qwen8b/manifest.json": {
+      "sha256": "95bc84a0e00a438969ca12ee717b96576d3078a9e8ddcb73bd4ca75541268520",
+      "bytes": 4008
+    },
+    "runs/bindmem_gradient_n6/qwen8b/predictions.jsonl": {
+      "sha256": "1f8b729cb283f23eb13bd99738b99c8003dba24bfd1b2460c00e680bc9f55af6",
+      "bytes": 2859573
+    },
+    "runs/bindmem_gradient_n6/qwen8b/scored/test/summary.json": {
+      "sha256": "f18c98e0d8893b6a39370c57d33b8c074df94fc70bb4d716687ff7deca345095",
+      "bytes": 21069
+    },
+    "data/bindmem_v2/manifest.json": {
+      "sha256": "7ac23854b0dc65f41812ef5bd7065811ba4d0b002a6de60170a51d37bc63f7c3",
+      "bytes": 1223
+    },
+    "data/bindmem_gradient_n6/manifest.json": {
+      "sha256": "7abb8634efa6100475ed333af17dd3301495cfdccfa8f7c4dd3b3c97c4073136",
+      "bytes": 1766
+    },
+    "runs/bindmem_v2/qwen8b_report/summary.json": {
+      "sha256": "75a3395095503ff3cc086201e73adfd33aacca13b46fdd631c452c3f4fb7ca47",
+      "bytes": 475112
+    },
+    "runs/bindmem_priority/core_comparison/comparison.json": {
+      "sha256": "af8f076406bb3ffe726e10ff1bb9a5cf504f8645587ce833e5929ac3050c9858",
+      "bytes": 27526
+    },
+    "runs/bindmem_priority/gradient_comparison/comparison.json": {
+      "sha256": "2a487c90e65175db385351ad4563509b3c8eb44639279f5cdb39423f816a0a99",
+      "bytes": 38328
+    },
+    "/ceph/home/shizhongyu/class_project/runs/bindmem_v2/qwen8b_report/strong_error_cases/cases.json": {
+      "sha256": "e713c37d6aabf6df439fb80ef40555318e7a8fc7510e9a8c21b44e7092c7e2e2",
+      "bytes": 53666
+    },
+    "/ceph/home/shizhongyu/class_project/runs/bindmem_priority/llava7b_core/strong_error_cases/cases.json": {
+      "sha256": "dc97493011c0144b26dbf9034470101c89dfddb79c5d87b30b871cf3cf34c6c0",
+      "bytes": 51885
+    },
+    "/ceph/home/shizhongyu/class_project/runs/bindmem_priority/llava7b_gradient/strong_error_cases/cases.json": {
+      "sha256": "41e864746250ea0612fed239f54d3940a061f984f82155a26910dd7d08c98fc4",
+      "bytes": 38561
+    },
+    "/ceph/home/shizhongyu/class_project/runs/bindmem_v2/qwen8b_report/io_examples/cases.json": {
+      "sha256": "ce41fea2f37bcd031815abb883de1011cb281891991e193029c9699f46b646e9",
+      "bytes": 91099
+    },
+    "scripts/build_complete_project_report.py": {
+      "sha256": "eec9174ba4e9f337c236e1215cd7db389420aca1fa774ab4678474c937123e2d",
+      "bytes": 59456
+    },
+    "scripts/report_pdf.py": {
+      "sha256": "4bbd05238c1836942bf8208812d0bb99f64bb172fd0cc4e0e15ec17907f5b37e",
+      "bytes": 5887
+    },
+    "scripts/build_bindmem_visual_report.py": {
+      "sha256": "01b2b68971fa6923fdcc8f3135e6e078a2eb9a85b1dca13f616a330b32d26f49",
+      "bytes": 36558
+    }
+  }
+}

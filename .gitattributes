@@ -1,0 +1,6 @@
+# Generated report assets should not dominate source reviews. Preserve their bytes.
+reports/** linguist-generated=true -whitespace
+# These Markdown exports quote raw prompts, including their trailing spaces.
+INPUT_OUTPUT_REPORT.md -whitespace
+PROJECT_REPORT_COMPLETE.md -whitespace
+PROJECT_REPORT_V2.md -whitespace

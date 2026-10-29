@@ -1,0 +1,222 @@
+[
+  {
+    "trial_id": "0141c5681033d7edc0a0eaab9bcf",
+    "input": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "image": "images/39556ece2ff9fbce5bec415afdaf1c48.png",
+          "type": "image"
+        },
+        {
+          "text": "Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q1",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/efe6e108272343ba1587ccbece2e2d23.png",
+        "images/1c0ed1b1ee5c7431bf2407d0fa850b21.png",
+        "images/debcbf5ffb4c984501a8b791f1e93dd6.png",
+        "images/a121b48009bd81ddec94b9f54ee1a6e5.png"
+      ],
+      "trial_id": "0141c5681033d7edc0a0eaab9bcf"
+    },
+    "label": {
+      "answer": "NO",
+      "banks": [
+        [
+          "blue",
+          "red"
+        ],
+        [
+          "solid",
+          "stripes"
+        ],
+        [
+          "star",
+          "square"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00249",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "3746e900934964ca5a40622f",
+      "probe": [
+        "red",
+        "solid",
+        "square"
+      ],
+      "probe_type": "pairwise_complete",
+      "question": "Q1",
+      "replicate": 249,
+      "semantic_id": "a73dffe8a10cebf1c1f955d7",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "red",
+            "solid",
+            "star"
+          ]
+        ],
+        [
+          [
+            "red",
+            "stripes",
+            "square"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "stripes",
+            "star"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "solid",
+            "square"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "0141c5681033d7edc0a0eaab9bcf",
+      "world": 1,
+      "kind": "binary",
+      "observed": true,
+      "prediction": "YES",
+      "valid": true,
+      "correct": false,
+      "accepted": true,
+      "error": null
+    },
+    "qwen_raw": "YES",
+    "llava_raw": "Yes",
+    "images": {
+      "images/efe6e108272343ba1587ccbece2e2d23.png": "b5f996e72ae2999596acf1fec78a6d93bc45799fb1558dae882d67dfea5ba781",
+      "images/1c0ed1b1ee5c7431bf2407d0fa850b21.png": "f296e7654f65549a36cac7e57d50fa576169520660b0688347bf7f14c8013651",
+      "images/debcbf5ffb4c984501a8b791f1e93dd6.png": "85de137ab687984e16eef007338b0287522f4553fa75441b70e9fd12b003a9df",
+      "images/a121b48009bd81ddec94b9f54ee1a6e5.png": "dabbc5794e6269140869811c26bef06c38ca3e40849124cab21811baf1b58338",
+      "images/39556ece2ff9fbce5bec415afdaf1c48.png": "4a36ef281a675720a8ec7958e5032fba157d73b6773f1152e75b31a316e69d5c"
+    }
+  },
+  {
+    "trial_id": "02e86fede7ba2e4e9d02756baa09",
+    "input": {
+      "instruction": "Remember the study objects. Identity requires the SAME color, texture AND shape on one object. Position, size and viewpoint do not change identity. Shapes of 3D objects refer to their front silhouettes. ",
+      "level": "L2",
+      "query": [
+        {
+          "image": "images/83edcc6d4d780ccd7ec251e10f97ca51.png",
+          "type": "image"
+        },
+        {
+          "text": "Did this complete object occur in the study set? Output only YES or NO.",
+          "type": "text"
+        }
+      ],
+      "question": "Q1",
+      "response_kind": "binary",
+      "split": "test",
+      "study_images": [
+        "images/ffc6a2ea97d24cc6239e99d84dc070fb.png",
+        "images/4d419d9f5abbff6678555faffe712770.png",
+        "images/4f80f9e99babc5f4c768402724f0d6c9.png",
+        "images/b869c7d97050048261417af30185245b.png"
+      ],
+      "trial_id": "02e86fede7ba2e4e9d02756baa09"
+    },
+    "label": {
+      "answer": "NO",
+      "banks": [
+        [
+          "green",
+          "blue"
+        ],
+        [
+          "stripes",
+          "grid"
+        ],
+        [
+          "circle",
+          "hexagon"
+        ]
+      ],
+      "cluster_id": "seed20261022-g00094",
+      "level": "L2",
+      "mode": "2d",
+      "objects_per_image": 1,
+      "pair_id": "0a9ebcfd3f102ab35a45562f",
+      "probe": [
+        "blue",
+        "stripes",
+        "hexagon"
+      ],
+      "probe_type": "pairwise_complete",
+      "question": "Q1",
+      "replicate": 94,
+      "semantic_id": "850d23b238cb5b550b10e1e7",
+      "split": "test",
+      "study_mode": "2d",
+      "study_scenes": [
+        [
+          [
+            "blue",
+            "stripes",
+            "circle"
+          ]
+        ],
+        [
+          [
+            "green",
+            "grid",
+            "circle"
+          ]
+        ],
+        [
+          [
+            "green",
+            "stripes",
+            "hexagon"
+          ]
+        ],
+        [
+          [
+            "blue",
+            "grid",
+            "hexagon"
+          ]
+        ]
+      ],
+      "task": "recall_anchor",
+      "total_objects": 4,
+      "trial_id": "02e86fede7ba2e4e9d02756baa09",
+      "world": 1,
+      "kind": "binary",
+      "observed": true,
+      "prediction": "YES",
+      "valid": true,
+      "correct": false,
+      "accepted": true,
+      "error": null
+    },
+    "qwen_raw": "NO",
+    "llava_raw": "Yes",
+    "images": {
+      "images/ffc6a2ea97d24cc6239e99d84dc070fb.png": "fdaa68c0d7874d13a2865a01f5566765b88153287ab61279f94a63899eb9cf54",
+      "images/4d419d9f5abbff6678555faffe712770.png": "2b3d2c5217dab8060ae91fac9d26e29275db98120f1a98d3a4fa3c05da6a063c",
+      "images/4f80f9e99babc5f4c768402724f0d6c9.png": "2b526b0ce8b3dc329dd71bff7c33b7f843ad630c611a8570662f1379f10e2373",
+      "images/b869c7d97050048261417af30185245b.png": "d03cff2fc7d4beb1d0ee830d3d05ff236cfb50560049ce9baee9ee768d316438",
+      "images/83edcc6d4d780ccd7ec251e10f97ca51.png": "53d2f53d85cdeb27a70e236246211f754cd0904b53b3945caaaf097a8d65be8b"
+    }
+  }
+]

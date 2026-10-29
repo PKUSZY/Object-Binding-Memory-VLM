@@ -1,0 +1,8 @@
+# Optional report-only environment; no need to change the model environment.
+# Match the separate base-Python plotting environment (not requirements-cpu.txt).
+numpy==1.26.4
+pillow==10.3.0
+matplotlib==3.8.4
+Markdown==3.4.1
+reportlab==5.1.0
+pypdf==6.21.4
